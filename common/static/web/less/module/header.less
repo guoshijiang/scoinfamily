@@ -1,0 +1,83 @@
+.header-container{
+  height: 70px;
+  .left-container{
+    .logo{
+      display: flex;
+      width: 106px;
+      height: 43px;
+    }
+    .nav-box{
+      width: 400px;
+      margin-left: 110px;
+      li {
+        display: flex;
+        flex-direction: column;
+        &.active{
+          .active-line{
+            opacity: 1;
+          }
+        }
+        a {
+          font-size: 14px;
+          font-family: PingFang SC;
+          font-weight: 400;
+          color: #333333;
+          line-height: 33px;
+          text-decoration: none;
+        }
+        .active-line{
+          display: inline-block;
+          width: 100%;
+          height: 3px;
+          background: #3F89F6;
+          border-radius: 2px;
+          opacity: 0;
+        }
+      }
+    }
+  }
+  .right-container{
+    .login-btn-box{
+      display: flex;
+      align-items: center;
+      .login-btn{
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        font-family: PingFang SC;
+        font-weight: 400;
+        color: #333333;
+        line-height: 33px;
+        text-decoration: none;
+        margin-right: 27px;
+        img{
+          margin-right: 3px;
+        }
+      }
+    }
+    .right-login-box{
+      display: flex;
+      align-items: center;
+      .user-img{
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+      }
+      .back-btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 32px;
+        background: #FCFCFC;
+        border: 1px solid #EEEEEE;
+        border-radius: 16px;
+        font-size: 14px;
+        font-family: PingFang SC;
+        font-weight: 400;
+        color: #333333;
+        margin-left: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{% load staticfiles cf_tags%}
+<html>
+<html data-static_url={{ config.STATIC_URL }}>
+  <head>
+    <title>币家(coinfamily)-帮丢失的币回家</title>
+    <meta charSet="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Cache-Contro" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-title" content="we guitar">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="renderer" content="webkit" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favico.png' %}" />
+    <link rel="stylesheet" href="{% static 'web/css/common.css' %}">
+    <script src="{% static 'web/js/jquery-1.8.3.min.js' %}"></script>
+    <script src="{% static 'web/js/jquery.SuperSlide.2.1.1.js' %}"></script>
+    <meta name='robots' content='index,follow' />
+    <meta name="keywords" content="币家(coinfamily)-帮丢失的币回家">
+    <meta name="description" content="币家(coinfamily)-帮丢失的币回家">
+    {% block head %}
+    {% endblock %}
+  </head>
+  <body>
+  {% include 'web/layout/header.html' %}
+  {% block content %}
+  {% endblock %}
+  {% include 'web/layout/bottom.html' %}
+  </body>
+</html>

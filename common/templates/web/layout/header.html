@@ -1,0 +1,20 @@
+{% load staticfiles cf_tags%}
+<div class="header-container flex-between alcenter w1200">
+    <div class="left-container flex">
+      <img src="{% static 'web/images/logo.png' %}" alt="" class="logo">
+      <ul class="flex alcenter nav-box justify-between">
+        <li class="active"><a href="{% url 'index' %}" target="_blank">首页</a><span class="active-line"></span></li>
+        <li><a href="{% url 'event' %}" target="_blank">事件</a><span class="active-line"></span></li>
+        <li><a href="{% url 'recovery_scheme' %}" target="_blank">找回方案</a><span class="active-line"></span></li>
+        <li><a href="{% url  'tools' %}" target="_blank">小工具</a><span class="active-line"></span></li>
+      </ul>
+    </div>
+    <div class="right-container">
+      <div class="login-btn-box flex">
+        <a href="{% url 'login' %}" class="login-btn">
+          <img src="{% static 'web/images/suo.png' %}" alt="">
+          登录</a>
+        <a href="{% url 'register' %}" class="el-button mini">注册</a>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,68 @@
+.page-container {
+  width: 100%;
+  padding-top: 60px;
+}
+.page-container .logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.page-container .logo img {
+  display: block;
+  width: .5rem;
+  height: .5rem;
+}
+.page-container .tab-title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 2rem;
+  height: .44rem;
+  margin: 34px auto 18px;
+  background-color: rgba(46, 133, 244, 0.1);
+  border-radius: .24rem;
+}
+.page-container .tab-title-container .tab-item {
+  width: 1rem;
+  height: .44rem;
+  font-size: .16rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #458DF7;
+  line-height: .44rem;
+  text-align: center;
+  border-radius: .24rem;
+}
+.page-container .tab-title-container .tab-item.on {
+  color: #fff;
+  background: linear-gradient(224deg, #428bf6 0%, #73abfd 100%);
+}
+.page-container .tab-content-container {
+  width: 100%;
+}
+.page-container .tab-content-container .login-content-container {
+  width: 3rem;
+  margin: 0 auto;
+}
+.page-container .tab-content-container .login-content-container .login-type-box {
+  display: flex;
+  justify-content: space-between;
+}
+.page-container .tab-content-container .login-content-container .login-type-box a {
+  font-size: .14rem;
+  font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+  font-weight: 400;
+  color: #999999;
+  line-height: .21rem;
+  text-decoration: none;
+}
+.page-container .tab-content-container .login-content-container .btn-box {
+  margin-top: 1rem;
+}
+.page-container .tab-content-container .register-content-container {
+  width: 3rem;
+  margin: 0 auto;
+}
+.page-container .tab-content-container .register-content-container .btn-box {
+  margin-top: 1rem;
+}

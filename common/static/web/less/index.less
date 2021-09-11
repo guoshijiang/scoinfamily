@@ -1,0 +1,287 @@
+@import './module/header.less';
+@import './module/footer.less';
+
+
+// 头图 banner
+.banner-container {
+  height: 453px;
+  padding: 91px 157px 36px 115px;
+  .left-banner{
+    .banner-title{
+      font-size: 48px;
+      font-family: PingFang SC;
+      font-weight: bold;
+      color: #13233C;
+      line-height: 60px;
+      margin-bottom: 20px;
+    }
+    .english-title{
+      font-size: 16px;
+      font-family: PingFang SC;
+      font-weight: 500;
+      color: #B4B5B9;
+      line-height: 20px;
+    }
+    .english-sub-title{
+      font-size: 12px;
+      font-family: PingFang SC;
+      font-weight: 500;
+      color: #B4B5B9;
+      line-height: 20px;
+      margin-bottom: 15px;
+      span{
+        font-size: 16px;
+      }
+    }
+    .join-btn{
+      width: 140px;
+      height: 40px;
+      border-radius: 20px;
+    }
+  }
+}
+
+// 币种 currency
+.currency-container{
+  height: 222px;
+  background-color: #F9F9FD;
+  padding-top: 25px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 160px;
+  li{
+    .currency-icon{
+      width: 40px;
+      height: 40px;
+    }
+    .name-box{
+      display: flex;
+      align-items: center;
+      .currency-name{
+        font-size: 10px;
+        font-family: PingFang SC;
+        font-weight: 400;
+        color: #B4B5B8;
+        line-height: 33px;
+      }
+      .currency-rate{
+        padding: 8px 12px;
+        height: 28px;
+        margin-left: 10px;
+        background: #2DB580;
+        border-radius: 12px;
+        font-size: 12px;
+        font-family: PingFang SC;
+        font-weight: 400;
+        color: #FFFFFF;
+        line-height: 12px;
+        &.red{
+          background: #F04716;
+        }
+      }
+    }
+    .price{
+      font-size: 24px;
+      font-family: PingFang SC;
+      font-weight: 600;
+      color: #222222;
+      line-height: 32px;
+      margin: 5px 0 10px;
+    }
+    .dollar-price{
+      font-size: 12px;
+      font-family: PingFang SC;
+      font-weight: 600;
+      color: #B4B5B8;
+      line-height: 12px;
+    }
+  }
+}
+
+// 币种事件 currency-event
+.currency-event-container{
+  .currency-event-content{
+    width: 100%;
+    margin-top: 70px;
+    .currency-event-item{
+      position: relative;
+      width: 100%;
+      height: 133px;
+      background: #FFFFFF;
+      box-shadow: 0px 5px 20px 0px rgba(63, 137, 246, 0.1);
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 16px;
+      margin-bottom: 30px;
+      .left-currency-box{
+        display: flex;
+        align-items: center;
+        .user-logo{
+          width: 50px;
+          height: 50px;
+          img{
+            display: block;
+            width: 100%;
+            border-radius: 50%;
+          }
+        }
+        .user-info{
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          margin-left: 16px;
+          height: 50px;
+          .user-name{
+            font-size: 18px;
+            font-family: PingFang SC;
+            font-weight: 600;
+            color: #333333;
+            line-height: 18px;
+          }
+          .user-desc{
+            font-size: 12px;
+            font-family: PingFang SC;
+            font-weight: 400;
+            color: #B4B5B8;
+            line-height: 12px;
+          }
+        }
+      }
+      .right-currency-box{
+        .see-detail-btn{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 127px;
+          height: 38px;
+          background: #FFFFFF;
+          border: 1px solid #3F89F6;
+          border-radius: 19px;
+          cursor: pointer;
+          text-decoration: none;
+          font-size: 12px;
+          font-family: PingFang SC;
+          font-weight: 400;
+          color: #3F89F6;
+          line-height: 33px;
+        }
+        .new-icon{
+          position: absolute;
+          top: -14px;
+          right: -18px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 58px;
+          height: 29px;
+          background: #FDD5B2;
+          border-radius: 5px;
+          font-size: 12px;
+          font-family: PingFang SC;
+          font-weight: 600;
+          color: #E86C01;
+          line-height: 33px;
+        }
+      }
+    }
+  }
+}
+
+// 找回方案 recovery-scheme
+.recovery-scheme-container{
+  margin-top: 100px;
+  .recovery-scheme-content{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+    li{
+      box-sizing: border-box;
+      width: 285px;
+      height: 293px;
+      padding: 0 35px 40px;
+      background: #FFFFFF;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-decoration: none;
+      &:hover{
+        box-shadow: 0px 5px 20px 0px rgba(63, 137, 246, 0.1);
+        border-radius: 10px;
+      }
+      .blue-line{
+        width: 42px;
+        height: 4px;
+        background: #3F89F6;
+      }
+      .recovery-scheme-title{
+        font-size: 24px;
+        font-family: PingFang SC;
+        font-weight: bold;
+        color: #101010;
+        line-height: 24px;
+      }
+      .recovery-scheme-desc{
+        font-size: 16px;
+        font-family: PingFang SC;
+        font-weight: 400;
+        color: #999999;
+        line-height: 25px;
+        text-align: justify;
+      }
+    }
+  }
+}
+
+// 小工具 small-tool
+.small-tool-container{
+  margin-top: 100px;
+  margin-bottom: 100px;
+  .small-tool-content{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 70px;
+    li{
+      width: 245px;
+      height: 280px;
+      background: #FFFFFF;
+      border-radius: 10px;
+      padding: 35px 30px;
+      a{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+      }
+      &:hover{
+        box-shadow: 0px 5px 20px 0px rgba(63, 137, 246, 0.1);
+      }
+      img{
+        width: 90px;
+        height: 90px;
+        border-radius: 30px;
+      }
+      .app-name{
+        font-size: 20px;
+        font-family: PingFang SC;
+        font-weight: 600;
+        color: #333333;
+        line-height: 27px;
+        margin-top: 26px;
+      }
+      .app-desc{
+        margin-top: 22px;
+        font-size: 12px;
+        font-family: PingFang SC;
+        font-weight: 600;
+        color: #B4B5B8;
+        line-height: 16px;
+      }
+    }
+  }
+}
