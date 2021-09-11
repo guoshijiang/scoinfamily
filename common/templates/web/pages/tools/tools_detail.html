@@ -1,0 +1,52 @@
+{% extends 'web/layout/main.html' %}
+{% load staticfiles cf_tags%}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'web/css/toolDetail.css' %}">
+{% endblock %}
+{% block content %}
+ <div class="content-box">
+    <div class="w1200">
+      <!-- 面包屑导航 -->
+      <p class="breadcrumb-navigation">
+        <a href="#" target="_blank">小工具</a> > <a href="#" target="_blank">工具详情</a>
+      </p>
+      <!-- 小工具详情 tool-detail-container -->
+      <div class="tool-detail-container">
+        <div class="top-detail-box">
+          <div class="left-name-box">
+            <div class="name-img-box">
+              <div class="img-box">
+                <img src="https://iph.href.lu/90x90?fg=ffffff&bg=0b5394" alt="">
+              </div>
+              <div class="name-box">
+                <p class="name">APP名称</p>
+                <p class="title">这是一款钱包工具</p>
+              </div>
+            </div>
+            <div class="tool-desc-box">
+              <p class="desc-title">简介</p>
+              <p class="desc-content">app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简app简介app简</p>
+            </div>
+          </div>
+          <div class="right-code-box">
+            <div class="code-item">
+              <img src="https://iph.href.lu/140x140?fg=ffffff&bg=0b5394" alt="">
+              <p>ios下载</p>
+            </div>
+            <div class="code-item">
+              <img src="https://iph.href.lu/140x140?fg=ffffff&bg=0b5394" alt="">
+              <p>安卓下载</p>
+            </div>
+          </div>
+        </div>
+        <ul class="img-desc-box">
+          <li><img src="https://iph.href.lu/205x365?fg=ffffff&bg=0b5394" alt=""></li>
+          <li><img src="https://iph.href.lu/205x365?fg=ffffff&bg=0b5394" alt=""></li>
+          <li><img src="https://iph.href.lu/205x365?fg=ffffff&bg=0b5394" alt=""></li>
+          <li><img src="https://iph.href.lu/205x365?fg=ffffff&bg=0b5394" alt=""></li>
+          <li><img src="https://iph.href.lu/205x365?fg=ffffff&bg=0b5394" alt=""></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endblock %}

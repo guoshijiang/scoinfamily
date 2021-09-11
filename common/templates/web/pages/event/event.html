@@ -15,7 +15,7 @@
         <div class="left-event-container">
           <div class="publish-btn-box">
             <p>致力于建设一个高效的安全协同网络，帮助数字资产用户进行溯源、追币、私钥找回等服务</p>
-            <a class="publish-btn" href="./publishEvent.html" target="_blank">发布事件</a>
+            <a class="publish-btn" href="{% url 'publish_event' %}" target="_blank">发布事件</a>
           </div>
           <ul class="tab-title-container">
             <li class="active">全部</li>
@@ -37,7 +37,7 @@
                     <p class="time">2021-06-20 10:50:11</p>
                   </div>
                 </div>
-                <a class="right-btn-box" href="./eventDetail.html" target="_blank">查看详情</a>
+                <a class="right-btn-box" href="{% url 'event_detail' 1 %}" target="_blank">查看详情</a>
               </li>
               <li>
                 <div class="left-info-box">

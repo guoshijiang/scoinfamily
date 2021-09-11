@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>币家(coinfamily)-帮丢失的币回家</title>
+    <meta charSet="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Cache-Contro" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-title" content="we guitar">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="renderer" content="webkit" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favico.png' %}" />
+    <link rel="stylesheet" href="{% static 'web/css/common.css' %}">
+    <link rel="stylesheet" href="{% static 'web/css/recovery.css' %}">
+    <script src="{% static 'web/js/jquery-1.8.3.min.js' %}"></script>
+    <script src="{% static 'web/js/jquery.SuperSlide.2.1.1.js' %}"></script>
+    <meta name='robots' content='index,follow' />
+    <meta name="keywords" content="币家(coinfamily)-帮丢失的币回家">
+    <meta name="description" content="币家(coinfamily)-帮丢失的币回家">
+    {% block head %}
+    {% endblock %}
+  </head>
+<body>
+  <div class="body-container flex-center">
+    <div class="login-box">
+      <img src="./images/logo.png" alt="logo">
+      <div class="login-info-box flex-column alcenter">
+        <p class="title">注册</p>
+        <p class="sub-title">欢迎来到币家</p>
+        <form action="#" class="el-form">
+          <div class="el-input">
+            <div class="el-label-box">
+              <img class="el-icon" src="./images/yonghu-2.png" alt="yonghu" />
+            </div>
+            <input type="text" class="el-input__inner" placeholder="手机号" maxlength="11">
+          </div>
+          <div class="el-input">
+            <div class="el-label-box">
+              <img class="el-icon" src="./images/mima.png" alt="yonghu" />
+            </div>
+            <input type="password" class="el-input__inner" placeholder="密码">
+            <div class="el-input-right">
+              <img class="el-icon" src="./images/yanjing.png" alt="yanjing" />
+            </div>
+          </div>
+          <div class="el-input">
+            <div class="el-label-box">
+              <img class="el-icon" src="./images/mima.png" alt="yonghu" />
+            </div>
+            <input type="text" class="el-input__inner" placeholder="验证码" maxlength="6">
+            <div class="el-input-right">
+              <div class="el-button mini">发送</div>
+            </div>
+          </div>
+          <div class="el-button block">注册</div>
+        </form>
+        <p class="register-box">已有账号？<a href="./login.html">登录</a></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

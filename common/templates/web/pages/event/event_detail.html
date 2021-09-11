@@ -1,0 +1,151 @@
+{% extends 'web/layout/main.html' %}
+{% load staticfiles cf_tags%}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'web/css/eventDetail.css' %}">
+{% endblock %}
+{% block content %}
+<div class="content-box">
+    <div class="w1200">
+      <p class="breadcrumb-navigation">
+        <a href="#" target="_blank">首页</a> > <a href="#" target="_blank">事件</a> > <a class="blue" href="#" target="_blank">事件详情</a>
+      </p>
+      <div class="event-detail-container">
+        <!-- 文章详情 -->
+        <div class="article-box">
+          <div class="left-article-box">
+            <p class="title">30ETH被盗，183EOS被盗<span>资产失窃</span></p>
+            <p class="time">2021-06-20 10:50:11</p>
+            <div class="info-box">
+              <img src="https://iph.href.lu/50x50?fg=ffffff&bg=0b5394" alt="" class="user-img">
+              <p class="user-name">用户名</p>
+            </div>
+            <div class="article-content">
+              <p>首先我是在AToken钱包创建助记词来管理所有币种的，目前该助记词上的币种大都没有了或者没多大价值了。 我在2018年6月还是7月时候收到大约等值于10万rmb的ETH，数量是29.84375，之后转移了一部分，结合之前应该有30+。而且北京时间9月8日，凌晨3点多该账户中30eth被转移，2分钟后该私钥绑定的EOS账户owner权限,active权限私钥都被替换。账户剩余少量ETH，之后本人自己还操作过一些token转账和DAPP，再无继续动作。 共损失30.648185082个ETH，183.9447个EOS 这是转移30ETH的交易hash：0x6d15e571d35440f2bf2f38e84382e704d0af059aa3f0cdf281a809487339c0ec 到黑客地址后一直没有转移，转账时间是北京时间9月8日凌晨。 EOS权限更换交易如下： 4d37f00968ac2542465f484c57584df32d7a74c196c3a514088bb2239d9cfc25 de383c38c35189e633cc707b378a41ebf409053505459e1d37269f608af999b4 时间为ETH转移后2分钟 因为我的助记词已经没有什么资产了，通过助记词可以完全证明我对该地址私钥的所有权</p>
+            </div>
+          </div>
+          <div class="right-article-box">
+            <p class="title">事件动态</p>
+            <div class="right-article-status">
+              <div class="status-item">
+                <div class="left-status-icon">
+                  <span class="circle"></span>
+                  <span class="line_1"></span>
+                </div>
+                <div class="right-status-text">
+                  <p class="title">待审核</p>
+                  <p class="time">2021.08.09  12:32</p>
+                </div>
+              </div>
+              <div class="status-item">
+                <div class="left-status-icon">
+                  <span class="circle"></span>
+                  <span class="line_1"></span>
+                </div>
+                <div class="right-status-text">
+                  <p class="title">待解决</p>
+                  <p class="time">2021.08.09  12:32</p>
+                </div>
+              </div>
+              <div class="status-item">
+                <div class="left-status-icon">
+                  <span class="circle"></span>
+                  <span class="line_1"></span>
+                </div>
+                <div class="right-status-text">
+                  <p class="title">解决完成</p>
+                  <p class="time">2021.08.09  12:32</p>
+                </div>
+              </div>
+              <div class="status-item">
+                <div class="left-status-icon">
+                  <span class="circle before-circle"></span>
+                  <span class="line_1"></span>
+                </div>
+                <div class="right-status-text">
+                  <p class="title">待反馈</p>
+                  <p class="time">2021.08.09  12:32</p>
+                </div>
+              </div>
+              <div class="status-item">
+                <div class="left-status-icon">
+                  <span class="circle"></span>
+                  <span class="line_1 long-line"></span>
+                </div>
+                <div class="right-status-text">
+                  <p class="title">反馈</p>
+                  <p class="time">2021.08.09  12:32</p>
+                  <div class="comment-box">
+                    <p>非常感谢币家这个平台，帮我找回丢失的币，减少了我的损失，</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 发布评论 -->
+        <div class="comment-box">
+          <textarea class="comment-text-area" rows="10" placeholder="说点什么"></textarea>
+          <div class="btn-box">
+            <div class="comment-btn">评论</div>
+          </div>
+        </div>
+        <!-- 全部评论 all-comment -->
+        <div class="all-comment-container">
+          <p class="title">全部评论</p>
+          <div class="comment-list">
+            <div class="comment-item">
+              <img class="user-img" src="https://iph.href.lu/50x50?fg=ffffff&bg=0b5394" alt="">
+              <div class="content-info">
+                <p class="user-name">用户名</p>
+                <p class="comment-text">怎么会丢币的，真的找回了吗？</p>
+                <div class="time-box"><p>1小时前</p><img src="https://iph.href.lu/18x15?fg=ffffff&bg=0b5394" alt=""></div>
+              </div>
+            </div>
+            <div class="comment-item">
+              <img class="user-img" src="https://iph.href.lu/50x50?fg=ffffff&bg=0b5394" alt="">
+              <div class="content-info">
+                <p class="user-name">用户名</p>
+                <p class="comment-text">怎么会丢币的，真的找回了吗？</p>
+                <div class="time-box"><p>1小时前</p><img src="https://iph.href.lu/18x15?fg=ffffff&bg=0b5394" alt=""></div>
+                <div class="w1000 comment-box">
+                  <textarea class="comment-text-area" rows="10" placeholder="说点什么"></textarea>
+                  <div class="btn-box">
+                    <div class="comment-btn">评论</div>
+                  </div>
+                </div>
+                <div class="child-comment">
+                  <img class="user-img" src="https://iph.href.lu/50x50?fg=ffffff&bg=0b5394" alt="">
+                  <div class="content-info">
+                    <p class="user-name">用户名</p>
+                    <p class="comment-text">怎么会丢币的，真的找回了吗？</p>
+                    <div class="time-box"><p>1小时前</p><img src="https://iph.href.lu/18x15?fg=ffffff&bg=0b5394" alt=""></div>
+                    <div class="comment-box">
+                      <textarea class="comment-text-area" rows="10" placeholder="说点什么"></textarea>
+                      <div class="btn-box">
+                        <div class="comment-btn">评论</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="child-comment">
+                  <img class="user-img" src="https://iph.href.lu/50x50?fg=ffffff&bg=0b5394" alt="">
+                  <div class="content-info">
+                    <p class="user-name">用户名</p>
+                    <p class="comment-text">怎么会丢币的，真的找回了吗？</p>
+                    <div class="time-box"><p>1小时前</p><img src="https://iph.href.lu/18x15?fg=ffffff&bg=0b5394" alt=""></div>
+                    <div class="comment-box">
+                      <textarea class="comment-text-area" rows="10" placeholder="说点什么"></textarea>
+                      <div class="btn-box">
+                        <div class="comment-btn">评论</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock %}

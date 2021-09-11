@@ -9,6 +9,6 @@ from common.pc_m import judge_pc_or_mobile
 def recovery_scheme(request):
     user_agt = judge_pc_or_mobile(request.META.get("HTTP_USER_AGENT"))
     if user_agt is False:
-        return render(request, 'web/pages/blog.html', locals())
+        return render(request, 'web/pages/blog/blog.html', locals())
     else:
-        return render(request, 'web/pages/blog.html', locals())
+        return render(request, 'web/pages/blog/blog.html', locals())
