@@ -9,19 +9,19 @@
             <li><a href="{% url 'index' %}">首页</a><span class="active-line"></span></li>
         {% endif %}
         {% if nav_bar == "event" %}
-            <li class="active"><a href="{% url 'event' %}" target="_blank">事件</a><span class="active-line"></span></li>
+            <li class="active"><a href="{% url 'event' %}">事件</a><span class="active-line"></span></li>
        {% else %}
-            <li><a href="{% url 'event' %}" target="_blank">事件</a><span class="active-line"></span></li>
+            <li><a href="{% url 'event' %}">事件</a><span class="active-line"></span></li>
         {% endif %}
         {% if nav_bar == "blog" %}
-            <li class="active"><a href="{% url 'blogs' %}" target="_blank">找回方案</a><span class="active-line"></span></li>
+            <li class="active"><a href="{% url 'blogs' %}">找回方案</a><span class="active-line"></span></li>
          {% else %}
-            <li><a href="{% url 'blogs' %}" target="_blank">找回方案</a><span class="active-line"></span></li>
+            <li><a href="{% url 'blogs' %}">找回方案</a><span class="active-line"></span></li>
         {% endif %}
         {% if nav_bar == "tools" %}
-            <li class="active"><a href="{% url  'tools' %}" target="_blank">小工具</a><span class="active-line"></span></li>
+            <li class="active"><a href="{% url  'tools' %}">小工具</a><span class="active-line"></span></li>
         {% else %}
-            <li><a href="{% url  'tools' %}" target="_blank">小工具</a><span class="active-line"></span></li>
+            <li><a href="{% url  'tools' %}">小工具</a><span class="active-line"></span></li>
         {% endif %}
       </ul>
     </div>
