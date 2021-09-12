@@ -52,15 +52,16 @@
             <form action="{% url 'update_uinfo' %}" class="el-form" method="post" enctype="multipart/form-data">
                 <div class="personal-content">
                   <div class="img-upload">
-                     {{ uinfo_form.photo }}
+                    <img id="pic" style="width:100px;height:100px;border-radius:50%;" src="{% static 'web/images/touxiang_d.png' %}">
+                    <input id="upload" name="file" accept="image/*" type="file" style="display: none">
                       {% if uinfo_form.photo.errors %}
                         <div style="color:red; margin-left:8px; margin-top:5px">
                            {{ uinfo_form.photo.errors }}
                         </div>
                       {% endif %}
                   </div>
-                  <div class="el-input">
-                    <div class="el-label-box">
+                  <div class="flex alcenter" style="margin-bottom: 20px;">
+                    <div class="el-label-box" style="margin-left: 6px;">
                       <img class="el-icon" src="{% static 'web/images/yonghu-2.png' %}" alt="yonghu" />
                     </div>
                     {{ uinfo_form.name }}
@@ -78,5 +79,29 @@
       </div>
     </div>
   </div>
+  <script>
+      $(function() {
+      $("#pic").click(function() {
+          $("#upload").click(); //隐藏了input:file样式后，点击头像就可以本地上传
+          $("#upload").on("change", function() {
+              var objUrl = getObjectURL(this.files[0]); //获取图片的路径，该路径不是图片在本地的路径
+              if (objUrl) {
+                  $("#pic").attr("src", objUrl); //将图片路径存入src中，显示出图片
+              }
+          });
+      });
+  });
+  function getObjectURL(file) {
+      var url = null;
+      if (window.createObjectURL != undefined) { // basic
+          url = window.createObjectURL(file);
+      } else if (window.URL != undefined) { // mozilla(firefox)
+          url = window.URL.createObjectURL(file);
+      } else if (window.webkitURL != undefined) { // webkit or chrome
+          url = window.webkitURL.createObjectURL(file);
+      }
+      return url;
+  }
+  </script>
   {% include 'web/layout/bottom.html' %}
 {% endblock %}

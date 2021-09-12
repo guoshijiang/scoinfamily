@@ -10,6 +10,8 @@ $(document).ready(function(){
     $('#yanjing').show()
     $('#id_password').attr({'type': 'password'})
   })
+
+
   $('#yanjing-1').click(function(){
     $(this).hide()
     $('#biyan-1').show()
@@ -20,6 +22,42 @@ $(document).ready(function(){
     $('#yanjing-1').show()
     $('#id_c_password').attr({'type': 'password'})
   })
+
+  $('#yanjing-3').click(function(){
+    $(this).hide()
+    $('#biyan-3').show()
+    $('#id_password').attr({'type': 'text'})
+  })
+  $('#biyan-3').click(function(){
+    $(this).hide()
+    $('#yanjing-3').show()
+    $('#id_password').attr({'type': 'password'})
+  })
+
+  $('#yanjing-4').click(function(){
+    $(this).hide()
+    $('#biyan-4').show()
+    $('#id_c_password').attr({'type': 'text'})
+  })
+  $('#biyan-4').click(function(){
+    $(this).hide()
+    $('#yanjing-4').show()
+    $('#id_c_password').attr({'type': 'password'})
+  })
+
+  $('#yanjing-6').click(function(){
+    $(this).hide()
+    $('#biyan-6').show()
+    $('#id_old_passwrod').attr({'type': 'text'})
+  })
+  $('#biyan-6').click(function(){
+    $(this).hide()
+    $('#yanjing-6').show()
+    $('#id_old_passwrod').attr({'type': 'password'})
+  })
+
+
+
 });
 
 function GetCodeRister(obj) {

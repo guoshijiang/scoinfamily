@@ -177,8 +177,8 @@
   line-height: 30px;
 }
 .my-info-container .right-info-box .event-box .no-more-box {
-  display: none;
   height: 690px;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -337,7 +337,4 @@
   color: #333333;
   margin-top: 20px;
   text-align: center;
-}
-.my-info-container .right-info-box .personal-box .personal-content .el-input {
-  margin-bottom: 115px;
 }
