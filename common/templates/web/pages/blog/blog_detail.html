@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'web/layout/main.html' %}
+{% load staticfiles cf_tags%}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'web/css/blogDetail.css' %}">
+{% endblock %}
+{% block content %}
+{% block forms_style %}
+    {{ event_form.media }}
+{% endblock %}
+{% include 'web/layout/header.html' %}
+<div class="content-box">
+    <div class="w1200">
+      <p class="breadcrumb-navigation">
+        <a href="{% url 'event' %}">首页</a> > <a href="{% url 'event' %}">找回方法</a> > <a style="color:blue">详情</a>
+      </p>
+      <div class="article-detail-box">
+        <p class="title">30ETH被盗，183EOS被盗</p>
+        <p class="time">2021-06-20 10:50:11</p>
+        <div class="content">
+            <p>首先我是在AToken钱包创建助记词来管理所有币种的，目前该助记词上的币种大都没有了或者没多大价值了。 我在2018年6月还是7月时候收到大约等值于10万rmb的ETH，数量是29.84375，之后转移了一部分，结合之前应该有30+。而且北京时间9月8日，凌晨3点多该账户中30eth被转移，2分钟后该私钥绑定的EOS账户owner权限,active权限私钥都被替换。账户剩余少量ETH，之后本人自己还操作过一些token转账和DAPP，再无继续动作。 共损失30.648185082个ETH，183.9447个EOS 这是转移30ETH的交易hash：0x6d15e571d35440f2bf2f38e84382e704d0af059aa3f0cdf281a809487339c0ec 到黑客地址后一直没有转移，转账时间是北京时间9月8日凌晨。 EOS权限更换交易如下： 4d37f00968ac2542465f484c57584df32d7a74c196c3a514088bb2239d9cfc25 de383c38c35189e633cc707b378a41ebf409053505459e1d37269f608af999b4 时间为ETH转移后2分钟 因为我的助记词已经没有什么资产了，通过助记词可以完全证明我对该地址私钥的所有权</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
