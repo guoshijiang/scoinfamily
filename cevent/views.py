@@ -9,6 +9,7 @@ from blogs.models import Article
 
 
 def event(request):
+    nav_bar = "event"
     cat_id = int(request.GET.get("cat_id", 0))
     user_agt = judge_pc_or_mobile(request.META.get("HTTP_USER_AGENT"))
     blog_list = Article.objects.filter(is_active=True).order_by("-id")[0:6]
@@ -26,6 +27,7 @@ def event(request):
 
 
 def event_detail(request, vid):
+    nav_bar = "event"
     event = Event.objects.filter(id=vid).first()
     user_agt = judge_pc_or_mobile(request.META.get("HTTP_USER_AGENT"))
     if user_agt is False:
@@ -35,6 +37,7 @@ def event_detail(request, vid):
 
 
 def publish_event(request):
+    nav_bar = "event"
     user_agt = judge_pc_or_mobile(request.META.get("HTTP_USER_AGENT"))
     if user_agt is False:
         return render(request, 'web/pages/event/publish_event.html', locals())

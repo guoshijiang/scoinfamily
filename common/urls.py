@@ -9,7 +9,7 @@ from cevent.views import (
     publish_event
 )
 from blogs.views import (
-    recovery_scheme,
+    blogs,
     blog_detail
 )
 from tools.views import (
@@ -32,7 +32,7 @@ urlpatterns: List[Any] = [
     path(r'<int:vid>/event_detail', event_detail, name='event_detail'),
     path(r'publish_event', publish_event, name='publish_event'),
 
-    path(r'recovery_scheme', recovery_scheme, name='recovery_scheme'),
+    path(r'blogs', blogs, name='blogs'),
     path(r'<int:id>/blog_detail', blog_detail, name='blog_detail'),
 
     path(r'tools', tools, name='tools'),

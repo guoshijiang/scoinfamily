@@ -10,6 +10,7 @@ from tools.models import Tools
 
 
 def index(request):
+    nav_bar = "index"
     user_agt = judge_pc_or_mobile(request.META.get("HTTP_USER_AGENT"))
     lst_event = Event.objects.filter(
         status__in=["WAIT_SOLUTE", "WAIT_BACK", "FINISH"]
