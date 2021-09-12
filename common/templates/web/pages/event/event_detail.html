@@ -87,57 +87,54 @@
           </div>
         </div>
         <!-- 全部评论 all-comment -->
-        <div class="all-comment-container">
+        <div class="all-comment-container forum-content-container">
           <p class="title">全部评论</p>
-          <div class="comment-list">
-            <div class="comment-item">
-              <img class="user-img" src="https://iph.href.lu/50x50?fg=ffffff&bg=0b5394" alt="">
-              <div class="content-info">
-                <p class="user-name">用户名</p>
-                <p class="comment-text">怎么会丢币的，真的找回了吗？</p>
-                <div class="time-box"><p>1小时前</p><img src="https://iph.href.lu/18x15?fg=ffffff&bg=0b5394" alt=""></div>
+          <div class="comment-list-box">
+            <div
+              class="comment-item"
+            >
+              <div class="top-comment">
+                <div class="img-box"><img src="{% static 'web/images/touxiang_d.png' %}" alt=""></div>
+                <div class="right-info-box">
+                  <p class="name">用户名<span>2021-08-14 02:36:31</span></p>
+                  <p class="content">评论内容评论内容评论内容评论内容</p>
+                  <div class="reply-box">
+                    <div class="left">
+                      <div class="small-img-box"><img src="{% static 'web/images/touxiang_d.png' %}" alt=""></div>
+                      <span class="num">1 条回复</span>
+                      <span class="text">最后回复 2021-08-14 02:36:31</span>
+                      <img src="{% static 'web/images/icon-right.png' %}" alt="" style="width: 14px;height: 14px;cursor: pointer;">
+                      <img src="{% static 'web/images/icon-bottom.png' %}" alt="" style="width: 14px;height: 14px;cursor: pointer;">
+                    </div>
+                    <div class="left" v-else></div>
+                    <div class="right">
+                      <a class="el-button primary" href="#" target="_blank" style="width: 80px;height: 32px;margin-right: 10px;">登录</a>
+                      <div class="el-button primary" style="width: 80px;height: 32px;margin-right: 10px;">回复</div>
+                      <div class="el-button primary" style="width: 80px;height: 32px;">收起</div>
+                    </div>
+                  </div>
+                  <div class="reply-list"> <!--  添加class： reply-hidden 会隐藏 -->
+                    <ul>
+                      <li
+                      >
+                        <div class="left-header-img"><img src="{% static 'web/images/touxiang_d.png' %}" alt=""></div>
+                        <div class="right-reply-info-box">
+                          <p><span class="name">用户名<span class="time">2021-08-14 02:36:31</span></span></p>
+                          <p class="reply-text">评论内容</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="comment-item">
-              <img class="user-img" src="https://iph.href.lu/50x50?fg=ffffff&bg=0b5394" alt="">
-              <div class="content-info">
-                <p class="user-name">用户名</p>
-                <p class="comment-text">怎么会丢币的，真的找回了吗？</p>
-                <div class="time-box"><p>1小时前</p><img src="https://iph.href.lu/18x15?fg=ffffff&bg=0b5394" alt=""></div>
-                <div class="w1000 comment-box">
-                  <textarea class="comment-text-area" rows="10" placeholder="说点什么"></textarea>
-                  <div class="btn-box">
-                    <div class="comment-btn">评论</div>
-                  </div>
-                </div>
-                <div class="child-comment">
-                  <img class="user-img" src="https://iph.href.lu/50x50?fg=ffffff&bg=0b5394" alt="">
-                  <div class="content-info">
-                    <p class="user-name">用户名</p>
-                    <p class="comment-text">怎么会丢币的，真的找回了吗？</p>
-                    <div class="time-box"><p>1小时前</p><img src="https://iph.href.lu/18x15?fg=ffffff&bg=0b5394" alt=""></div>
-                    <div class="comment-box">
-                      <textarea class="comment-text-area" rows="10" placeholder="说点什么"></textarea>
-                      <div class="btn-box">
-                        <div class="comment-btn">评论</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="child-comment">
-                  <img class="user-img" src="https://iph.href.lu/50x50?fg=ffffff&bg=0b5394" alt="">
-                  <div class="content-info">
-                    <p class="user-name">用户名</p>
-                    <p class="comment-text">怎么会丢币的，真的找回了吗？</p>
-                    <div class="time-box"><p>1小时前</p><img src="https://iph.href.lu/18x15?fg=ffffff&bg=0b5394" alt=""></div>
-                    <div class="comment-box">
-                      <textarea class="comment-text-area" rows="10" placeholder="说点什么"></textarea>
-                      <div class="btn-box">
-                        <div class="comment-btn">评论</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div class="text-area-box">
+                <textarea
+                  row="4"
+                  placeholder="请输入内容"
+                  class="comment-text-area"
+                >
+                </textarea>
+                <div class="el-button primary" style="width: 80px;height: 32px;">回复</div>
               </div>
             </div>
           </div>
