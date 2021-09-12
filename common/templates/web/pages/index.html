@@ -59,135 +59,64 @@
       <p class="sub-title"><span>L</span>ost coin event</p>
     </div>
     <div class="currency-event-content">
-      <div class="currency-event-item">
-        <div class="left-currency-box">
-          <img src="{% static 'web/images/touxiang_d.png' %}" alt="touxiang_d" class="user-logo">
-          <div class="user-info">
-            <p class="user-name">用户名</p>
-            <p class="user-desc">事件内容事件内容事件内容事件内容事件内容事件内容</p>
-          </div>
-        </div>
-        <div class="right-currency-box">
-          <a class="see-detail-btn" href="#" target="_blank">查看详情</a>
-          <div class="new-icon">NEW</div>
-        </div>
-      </div>
-      <div class="currency-event-item">
-        <div class="left-currency-box">
-          <img src="{% static 'web/images/touxiang_d.png' %}" alt="touxiang_d" class="user-logo">
-          <div class="user-info">
-            <p class="user-name">用户名</p>
-            <p class="user-desc">事件内容事件内容事件内容事件内容事件内容事件内容</p>
-          </div>
-        </div>
-        <div class="right-currency-box">
-          <a class="see-detail-btn" href="#" target="_blank">查看详情</a>
-        </div>
-      </div>
-      <div class="currency-event-item">
-        <div class="left-currency-box">
-          <img src="{% static 'web/images/touxiang_d.png' %}" alt="touxiang_d" class="user-logo">
-          <div class="user-info">
-            <p class="user-name">用户名</p>
-            <p class="user-desc">事件内容事件内容事件内容事件内容事件内容事件内容</p>
-          </div>
-        </div>
-        <div class="right-currency-box">
-          <a class="see-detail-btn" href="#" target="_blank">查看详情</a>
-        </div>
-      </div>
-      <div class="currency-event-item">
-        <div class="left-currency-box">
-          <img src="{% static 'web/images/touxiang_d.png' %}" alt="touxiang_d" class="user-logo">
-          <div class="user-info">
-            <p class="user-name">用户名</p>
-            <p class="user-desc">事件内容事件内容事件内容事件内容事件内容事件内容</p>
-          </div>
-        </div>
-        <div class="right-currency-box">
-          <a class="see-detail-btn" href="#" target="_blank">查看详情</a>
-        </div>
-      </div>
+        {% for event in lst_event %}
+            <div class="currency-event-item">
+                <div class="left-currency-box">
+                  {% if event.user.photo %}
+                      <img src="{% url 'index' %}media/{{ event.user.photo }}" alt="touxiang_d" class="user-logo">
+                  {% else %}
+                      <img src="{% static 'web/images/touxiang_d.png' %}" alt="touxiang_d" class="user-logo">
+                  {% endif %}
+                  <div class="user-info">
+                    <p class="user-name">{{ event.user.name }}</p>
+                    <p class="user-desc">{{ event.title }}</p>
+                  </div>
+                </div>
+                <div class="right-currency-box">
+                  <a class="see-detail-btn" href="{% url 'event_detail' event.id %}">查看详情</a>
+                  <div class="new-icon">NEW</div>
+                </div>
+            </div>
+        {% endfor %}
     </div>
-    <a href="#" class="see-more" target="_blank">查看更多>></a>
-  </div>
-<div class="recovery-scheme-container w1000">
-    <div class="module-title">
-      <p class="title">找回方案</p>
-      <p class="sub-title"><span>R</span>etrieving method</p>
-    </div>
-    <ul class="recovery-scheme-content">
-      <li>
-        <span class="blue-line"></span>
-        <p class="recovery-scheme-title">方法标题</p>
-        <p class="recovery-scheme-desc">全方位风险管理，三重财务对账，资金安全实时监控，严重报警主动干预。资产流转智能监控异常报警，提现阻断，DDos防御、流量清洗等30+项防御机制</p>
-      </li>
-      <li>
-        <span class="blue-line"></span>
-        <p class="recovery-scheme-title">方法标题</p>
-        <p class="recovery-scheme-desc">全方位风险管理，三重财务对账，资金安全实时监控，严重报警主动干预。资产流转智能监控异常报警，提现阻断，DDos防御、流量清洗等30+项防御机制</p>
-      </li>
-      <li>
-        <span class="blue-line"></span>
-        <p class="recovery-scheme-title">方法标题</p>
-        <p class="recovery-scheme-desc">全方位风险管理，三重财务对账，资金安全实时监控，严重报警主动干预。资产流转智能监控异常报警，提现阻断，DDos防御、流量清洗等30+项防御机制</p>
-      </li>
-    </ul>
-    <a href="#" class="see-more" target="_blank">查看更多>></a>
-  </div>
-<div class="small-tool-container w1000">
-    <div class="module-title">
-      <p class="title">小工具</p>
-      <p class="sub-title"><span>S</span>mall tools</p>
-    </div>
-    <ul class="small-tool-content">
-      <li>
-        <a href="#" target="_blank" rel="noopener noreferrer">
-          <img src="https://iph.href.lu/90x90?fg=666666&bg=cccccc" alt="">
-          <p class="app-name">APP名称</p>
-          <p class="app-desc">app简介app简介app简介</p>
-        </a>
-      </li>
-      <li>
-        <a href="#" target="_blank" rel="noopener noreferrer">
-          <img src="https://iph.href.lu/90x90?fg=666666&bg=cccccc" alt="">
-          <p class="app-name">APP名称</p>
-          <p class="app-desc">app简介app简介app简介</p>
-        </a>
-      </li>
-      <li>
-        <a href="#" target="_blank" rel="noopener noreferrer">
-          <img src="https://iph.href.lu/90x90?fg=666666&bg=cccccc" alt="">
-          <p class="app-name">APP名称</p>
-          <p class="app-desc">app简介app简介app简介</p>
-        </a>
-      </li>
-      <li>
-        <a href="#" target="_blank" rel="noopener noreferrer">
-          <img src="https://iph.href.lu/90x90?fg=666666&bg=cccccc" alt="">
-          <p class="app-name">APP名称</p>
-          <p class="app-desc">app简介app简介app简介</p>
-        </a>
-      </li>
-    </ul>
-  </div>
-<div class="contact-us-container w1200">
-    <div class="contact-us-title">
-      <p class="title">联系我们</p>
-      <p class="sub-title">遇到相关技术问题？请在线提交你所需的服务请求，最短2分钟内将有工程师联系帮助您解决处理。</p>
-    </div>
-    <div class="contact-us-content">
-      <div class="left-contact-box">
-        <form action="#">
-          <input type="text" class="contact-input" placeholder="客户名称">
-          <input type="text" class="contact-input" placeholder="联系方式">
-          <textarea class="contact-textarea" row="3" placeholder="请描述你遇到的问题"></textarea>
-          <div class="send-btn">发送</div>
-        </form>
+    {% if lst_event %}
+        <a href="{% url 'event' %}" class="see-more" target="_blank">查看更多>></a>
+    {% endif %}
+        </div>
+    <div class="recovery-scheme-container w1000">
+        <div class="module-title">
+          <p class="title">找回方案</p>
+          <p class="sub-title"><span>R</span>etrieving method</p>
+        </div>
+        <ul class="recovery-scheme-content">
+          {% for blog in lst_arctcle %}
+              <li>
+                <span class="blue-line"></span>
+                <p class="recovery-scheme-title">{{ blog.title }}</p>
+                <p class="recovery-scheme-desc">{{ blog.excerpt }}</p>
+              </li>
+          {% endfor %}
+        </ul>
+        {% if lst_arctcle %}
+            <a href="#" class="see-more" target="_blank">查看更多>></a>
+        {% endif %}
       </div>
-      <div class="right-contact-box">
-        <img src="https://iph.href.lu/535x315?fg=666666&bg=cccccc" alt="">
-      </div>
+    <div class="small-tool-container w1000">
+        <div class="module-title">
+          <p class="title">小工具</p>
+          <p class="sub-title"><span>S</span>mall tools</p>
+        </div>
+        <ul class="small-tool-content">
+          {% for tool in lst_tools %}
+              <li>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  <img src="{% url 'index' %}media/{{ tool.img }}" alt="">
+                  <p class="app-name">{{ tool.name }}</p>
+                  <p class="app-desc">{{ tool.excerpt }}</p>
+                </a>
+              </li>
+          {% endfor %}
+        </ul>
     </div>
-  </div>
+    {% include 'web/layout/contact.html' %}
 {% endblock %}

@@ -9,7 +9,7 @@ from common.models import BaseModel
 @unique
 class EventStatus(Enum):
     WAIT_CHECK = "WAIT_CHECK"            # 待审核
-    WAAIT_SOLUTE = "WAAIT_SOLUTE"        # 待解决
+    WAAIT_SOLUTE = "WAIT_SOLUTE"         # 待解决
     WAIT_BACK = "WAIT_BACK"              # 待反馈
     FINISH = "FINISH"                    # 已完成
 
@@ -100,7 +100,7 @@ class Event(BaseModel):
         verbose_name_plural = "事件表"
 
     def __str__(self):
-        return self.name
+        return self.title
 
     def as_dict(self):
         return {"id": self.id}
