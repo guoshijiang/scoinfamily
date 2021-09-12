@@ -127,6 +127,7 @@
   font-weight: 400;
   color: #FFFFFF;
   line-height: 30px;
+  margin-bottom: 0;
 }
 .event-container .left-event-container .publish-btn-box .publish-btn {
   display: flex;
