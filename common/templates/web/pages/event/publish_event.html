@@ -5,11 +5,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 {% endblock %}
 {% block content %}
+{% block forms_style %}
+    {{ event_form.media }}
+{% endblock %}
 {% include 'web/layout/header.html' %}
 <div class="content-box">
     <div class="w1200">
       <p class="breadcrumb-navigation">
-        <a href="#" target="_blank">小工具</a> > <a href="#" target="_blank">工具详情</a>
+        <a href="{% url 'event' %}">事件</a> > <a style="color:blue">发布事件</a>
       </p>
       <div class="w1000">
         <div class="info-box">
@@ -20,60 +23,89 @@
           <div class="form-group row">
             <label for="inputEmail3" class="col-sm-2 col-form-label">币种</label>
             <div class="col-sm-10">
-              <input type="email" class="form-control" id="inputEmail3">
+              {{ event_form.coin }}
+              {% if event_form.coin.errors %}
+                <div style="color:red; margin-left:8px; margin-top:5px">
+                   {{ event_form.coin.errors }}
+                </div>
+              {% endif %}
             </div>
           </div>
           <div class="form-group row">
             <label for="inputPassword3" class="col-sm-2 col-form-label">我的地址</label>
             <div class="col-sm-10">
-              <input type="password" class="form-control" id="inputPassword3">
+               {{ event_form.my_address }}
+               {% if event_form.my_address.errors %}
+                    <div style="color:red; margin-left:8px; margin-top:5px">
+                        {{ event_form.my_address.errors }}
+                    </div>
+               {% endif %}
             </div>
           </div>
           <div class="form-group row">
             <label for="inputPassword4" class="col-sm-2 col-form-label">黑客地址</label>
             <div class="col-sm-10">
-              <input type="password" class="form-control" id="inputPassword4">
+               {{ event_form.hacker_address }}
+               {% if event_form.hacker_address.errors %}
+                    <div style="color:red; margin-left:8px; margin-top:5px">
+                        {{ event_form.hacker_address.errors }}
+                    </div>
+               {% endif %}
             </div>
           </div>
           <fieldset class="form-group row">
             <legend class="col-form-label col-sm-2 float-sm-left pt-0">是否公开</legend>
             <div class="col-sm-10">
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                <label class="form-check-label" for="gridRadios1">
-                  是
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                <label class="form-check-label" for="gridRadios2">
-                  否
-                </label>
-              </div>
+              {{ event_form.is_public }}
+               {% if event_form.is_public.errors %}
+                    <div style="color:red; margin-left:8px; margin-top:5px">
+                        {{ event_form.is_public.errors }}
+                    </div>
+               {% endif %}
             </div>
           </fieldset>
           <div class="form-group row">
             <label for="inputPassword5" class="col-sm-2 col-form-label">标题</label>
             <div class="col-sm-10">
-              <input type="password" class="form-control" id="inputPassword5">
+              {{ event_form.title }}
+               {% if event_form.title.errors %}
+                    <div style="color:red; margin-left:8px; margin-top:5px">
+                        {{ event_form.title.errors }}
+                    </div>
+               {% endif %}
             </div>
           </div>
           <div class="form-group row">
             <label for="inputPassword6" class="col-sm-2 col-form-label">详情</label>
             <div class="col-sm-10">
-              <textarea class="form-control" id="inputPassword6"></textarea>
+               {{ event_form.detail }}
+               {% if event_form.detail.errors %}
+                    <div style="color:red; margin-left:8px; margin-top:5px">
+                        {{ event_form.detail.errors }}
+                    </div>
+               {% endif %}
             </div>
           </div>
           <div class="form-group row">
             <label for="inputPassword7" class="col-sm-2 col-form-label">邮箱</label>
             <div class="col-sm-10">
-              <input type="password" class="form-control" id="inputPassword7">
+              {{ event_form.email }}
+               {% if event_form.email.errors %}
+                    <div style="color:red; margin-left:8px; margin-top:5px">
+                        {{ event_form.email.errors }}
+                    </div>
+               {% endif %}
             </div>
           </div>
           <div class="form-group row">
             <label for="inputPassword8" class="col-sm-2 col-form-label">微信</label>
             <div class="col-sm-10">
-              <input type="password" class="form-control" id="inputPassword8">
+              {{ event_form.weichat }}
+               {% if event_form.weichat.errors %}
+                    <div style="color:red; margin-left:8px; margin-top:5px">
+                        {{ event_form.weichat.errors }}
+                    </div>
+               {% endif %}
             </div>
           </div>
           <div class="form-group row">

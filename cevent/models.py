@@ -3,7 +3,8 @@
 from enum import Enum, unique
 from django.db import models
 from scauth.models import AuthUser
-from common.models import BaseModel
+from common.models import BaseModel, BoolYesOrNoSelect
+from DjangoUeditor.models import UEditorField
 
 
 @unique
@@ -67,15 +68,48 @@ class Event(BaseModel):
         null=True,
         verbose_name="事件分类",
     )
+    email = models.CharField(
+        max_length=512,
+        default="",
+        verbose_name="邮箱",
+    )
+    weichat = models.CharField(
+        max_length=512,
+        default="",
+        verbose_name="微信",
+    )
+    coin = models.CharField(
+        max_length=512,
+        default="",
+        verbose_name="币种",
+    )
+    my_address = models.CharField(
+        max_length=512,
+        default="",
+        verbose_name="自己的地址",
+    )
+    hacker_address = models.CharField(
+        max_length=512,
+        default="",
+        verbose_name="黑客地址",
+    )
     title = models.CharField(
         max_length=512,
         default="",
         verbose_name="事件标题",
     )
-    detail = models.CharField(
-        max_length=10000,
-        default="",
-        verbose_name="事件详情",
+    detail = UEditorField(
+        width=800,
+        height=500,
+        toolbars="full",
+        imagePath="upimg/",
+        filePath="upfile/",
+        upload_settings={"imageMaxSize": 1204000},
+        settings={},
+        command=None,
+        blank=True,
+        null=True,
+        verbose_name='事件详情'
     )
     mark = models.CharField(
         max_length=512,
@@ -100,6 +134,13 @@ class Event(BaseModel):
         db_index=True,
         blank=True,
         null=True,
+    )
+    is_public = models.CharField(
+        max_length=100,
+        choices=BoolYesOrNoSelect,
+        default="No",
+        db_index=True,
+        verbose_name="是不是商家",
     )
     is_active = models.BooleanField(
         default=True, verbose_name="是否是有效"
@@ -133,12 +174,18 @@ class EventBack(BaseModel):
         null=True,
         verbose_name="关联事件",
     )
-    content = models.CharField(
-        max_length=1024,
-        default="",
+    content = UEditorField(
+        width=800,
+        height=500,
+        toolbars="full",
+        imagePath="upimg/",
+        filePath="upfile/",
+        upload_settings={"imageMaxSize": 1204000},
+        settings={},
+        command=None,
         blank=True,
         null=True,
-        verbose_name="论坛内容",
+        verbose_name='事件详情'
     )
     views = models.PositiveIntegerField(
         default=0,

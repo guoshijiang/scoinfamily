@@ -1,11 +1,13 @@
 #encoding=utf-8
 
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from blogs.models import Tag, Category, BaseModel
 from common.helpers import paged_items, ok_json
 from common.pc_m import judge_pc_or_mobile
 from cevent.models import Event, EventCat, EventBack
 from blogs.models import Article
+from cevent.forms.pulish_form import EventForm
+from scauth.models import AuthUser
 
 
 def event(request):
@@ -39,8 +41,30 @@ def event_detail(request, vid):
 
 def publish_event(request):
     nav_bar = "event"
+    user_id = request.session.get("user_id")
+    user = AuthUser.objects.filter(id=user_id).first()
     user_agt = judge_pc_or_mobile(request.META.get("HTTP_USER_AGENT"))
-    if user_agt is False:
-        return render(request, 'web/pages/event/publish_event.html', locals())
-    else:
-        return render(request, 'web/pages/event/publish_event.html', locals())
+    if request.method == "GET":
+        event_form = EventForm(request)
+        if user_agt is False:
+            return render(request, 'web/pages/event/publish_event.html', locals())
+        else:
+            return render(request, 'web/pages/event/publish_event.html', locals())
+    if request.method == "POST":
+        event_form = EventForm(request, request.POST)
+        if event_form.is_valid():
+            Event.objects.create(
+                user=user,
+                event_cat="",
+                email=event_form.clean_email(),
+                weichat=event_form.clean_weichat(),
+                coin=event_form.clean_coin(),
+                my_address=event_form.my_address,
+                hacker_address=event_form.hacker_address,
+                title=event_form.title,
+                detail=event_form.clean_detail(),
+                mark="",
+                is_public=event_form.clean_is_public(),
+            )
+            return redirect("event")
+
