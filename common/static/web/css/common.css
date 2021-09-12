@@ -237,7 +237,7 @@ li {
 }
 .see-more {
   display: block;
-  margin: 70px auto 0;
+  margin: 30px auto 0;
   width: 90px;
   text-align: center;
   font-size: 16px;
@@ -248,7 +248,7 @@ li {
   text-decoration: none;
 }
 .contact-us-container {
-  margin-bottom: 100px;
+  margin-bottom: 20px;
 }
 .contact-us-container .contact-us-title {
   width: 350px;
@@ -274,7 +274,6 @@ li {
 }
 .contact-us-container .contact-us-content .left-contact-box {
   width: 500px;
-  height: 380px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -282,7 +281,6 @@ li {
 
 .contact-us-container .contact-us-content .right-contact-box {
   width: 700px;
-  height: 335px;
   border-radius: 5px;
   padding: 10px;
   display: flex;

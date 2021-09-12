@@ -123,7 +123,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 160px;
+  margin-bottom: 60px;
 }
 .currency-container li {
   display: flex;
@@ -227,7 +227,7 @@
   line-height: 33px;
 }
 .recovery-scheme-container {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 .recovery-scheme-container .recovery-scheme-content {
   width: 100%;
@@ -282,14 +282,14 @@ margin-top: 50px;
   overflow: hidden;
 }
 .small-tool-container {
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 .small-tool-container .small-tool-content {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-top: 70px;
+  margin-top: 20px;
 }
 .small-tool-container .small-tool-content li {
   width: 245px;
@@ -313,6 +313,7 @@ margin-top: 50px;
   border-radius: 30px;
 }
 .small-tool-container .small-tool-content li .app-name {
+  margin: 0;
   font-size: 20px;
   font-family: PingFang SC;
   font-weight: 600;
@@ -323,9 +324,9 @@ margin-top: 50px;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   overflow: hidden;
-  margin-top: 50px;
 }
 .small-tool-container .small-tool-content li .app-desc {
+  margin: 0;
   margin-top: 22px;
   font-size: 12px;
   font-family: PingFang SC;
@@ -336,5 +337,4 @@ margin-top: 50px;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
-  margin-top: 50px;
 }
