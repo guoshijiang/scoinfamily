@@ -19,6 +19,6 @@ def blog_detail(request, id):
     nav_bar = "blog"
     user_agt = judge_pc_or_mobile(request.META.get("HTTP_USER_AGENT"))
     if user_agt is False:
-        return render(request, 'web/pages/blog/blog.html', locals())
+        return render(request, 'web/pages/blog/blog_detail.html', locals())
     else:
-        return render(request, 'web/pages/blog/blog.html', locals())
+        return render(request, 'web/pages/blog/blog_detail.html', locals())
