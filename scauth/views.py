@@ -10,6 +10,7 @@ from scauth.forms.regist_form import AuthUserRegisterForm
 from scauth.forms.login_form import UserPwdLoginForm, UserCodeLoginForm
 from scauth.forms.forget_form import ForgetPasswordForm
 from scauth.models import AuthUser
+from cevent.models import Event
 
 
 def sms_send(request):
@@ -126,13 +127,36 @@ def forget(request):
             )
 
 
-def user_info(request):
+def my_event(request):
+    side_bar = 'my_event'
+    user_id = request.session.get("user_id")
+    user = AuthUser.objects.filter(id=user_id).first()
+    event_list = Event.objects.filter(user=user).order_by("-id")
     user_agt = judge_pc_or_mobile(request.META.get("HTTP_USER_AGENT"))
     if user_agt is False:
-        return render(request, 'web/pages/auth/my.html', locals())
+        return render(request, 'web/pages/auth/my_event.html', locals())
     else:
-        return render(request, 'web/pages/auth/my.html', locals())
+        return render(request, 'web/pages/auth/my_event.html', locals())
 
 
+def update_password(request):
+    side_bar = 'update_password'
+    user_id = request.session.get("user_id")
+    user = AuthUser.objects.filter(id=user_id).first()
+    user_agt = judge_pc_or_mobile(request.META.get("HTTP_USER_AGENT"))
+    if user_agt is False:
+        return render(request, 'web/pages/auth/update_password.html', locals())
+    else:
+        return render(request, 'web/pages/auth/update_password.html', locals())
 
+
+def update_uinfo(request):
+    side_bar = 'update_uinfo'
+    user_id = request.session.get("user_id")
+    user = AuthUser.objects.filter(id=user_id).first()
+    user_agt = judge_pc_or_mobile(request.META.get("HTTP_USER_AGENT"))
+    if user_agt is False:
+        return render(request, 'web/pages/auth/update_uinfo.html', locals())
+    else:
+        return render(request, 'web/pages/auth/update_uinfo.html', locals())
 

@@ -1,0 +1,71 @@
+{% extends 'web/layout/main.html' %}
+{% load staticfiles cf_tags%}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'web/css/my.css' %}">
+{% endblock %}
+{% block content %}
+{% include 'web/layout/header.html' %}
+ <div class="content-box">
+    <div class="w1200">
+      <p class="breadcrumb-navigation">
+        <a href="{% url 'index' %}">首页</a> > <a>个人中心</a>
+      </p>
+      <div class="my-info-container">
+        <div class="left-info-box">
+          <div class="top-box">
+            <div class="account-info">
+              <img src="{% url 'index' %}media/{{ user.photo }}" alt="">
+              <p class="user-name">{{ user.phone }}</p>
+            </div>
+            <ul>
+              <a href="{% url 'my_event' %}">
+                 {% if side_bar == 'my_event' %}
+                    <li class="active">我的事件</li>
+                 {% else %}
+                    <li>我的事件</li>
+                 {% endif %}
+              </a>
+              <a href="{% url 'update_password' %}">
+                 {% if side_bar == 'update_password' %}
+                    <li class="active">修改密码</li>
+                 {% else %}
+                    <li>修改密码</li>
+                {% endif %}
+              </a>
+              <a href="{% url 'update_uinfo' %}">
+                {% if side_bar == 'update_uinfo' %}
+                    <li class="active">个人信息</li>
+                 {% else %}
+                    <li>个人信息</li>
+                {% endif %}
+              </a>
+            </ul>
+          </div>
+          <div class="bottom-box">
+            <img src="{% url 'index' %}media/{{ user.photo }}" alt="">
+            <a href="{% url 'logout' %}">退出</a>
+          </div>
+        </div>
+        <div class="right-info-box">
+          <div class="personal-box">
+            <p class="title">个人信息</p>
+            <div class="personal-content">
+              <div class="img-upload">
+                <img id="pic" style="width:100px;height:100px;border-radius:50%;" src="{% static 'web/images/touxiang_d.png' %}">
+                <input id="upload" name="file" accept="image/*" type="file" style="display: none">
+                <p>修改头像</p>
+              </div>
+              <div class="el-input">
+                <div class="el-label-box">
+                  <img class="el-icon" src="{% static 'web/images/touxiang_d.png' %}" alt="yonghu" />
+                </div>
+                <input type="text" class="el-input__inner" placeholder="用户名">
+              </div>
+              <div class="el-button block">修改</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

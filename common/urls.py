@@ -22,7 +22,9 @@ from scauth.views import (
     register,
     forget,
     logout,
-    user_info
+    my_event,
+    update_password,
+    update_uinfo
 )
 
 
@@ -43,5 +45,7 @@ urlpatterns: List[Any] = [
     path(r'login', login, name='login'),
     path(r'register', register, name='register'),
     path(r'forget', forget, name='forget'),
-    path(r'user_info', user_info, name='user_info'),
+    path(r'my_event', my_event, name='my_event'),
+    path(r'update_password', update_password, name='update_password'),
+    path(r'update_uinfo', update_uinfo, name='update_uinfo'),
 ]

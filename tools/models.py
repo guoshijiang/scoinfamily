@@ -28,6 +28,11 @@ class Tools(BaseModel):
         default='',
         verbose_name='工具github地址'
     )
+    gitee = models.CharField(
+        max_length=70,
+        default='',
+        verbose_name='工具gitee地址'
+    )
     body = UEditorField(
         width=800, height=500,
         toolbars="full", imagePath="upimg/", filePath="upfile/",

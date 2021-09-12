@@ -1,0 +1,80 @@
+{% extends 'web/layout/main.html' %}
+{% load staticfiles cf_tags%}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'web/css/my.css' %}">
+{% endblock %}
+{% block content %}
+{% include 'web/layout/header.html' %}
+ <div class="content-box">
+    <div class="w1200">
+      <p class="breadcrumb-navigation">
+        <a href="{% url 'index' %}">首页</a> > <a>个人中心</a>
+      </p>
+      <div class="my-info-container">
+        <div class="left-info-box">
+          <div class="top-box">
+            <div class="account-info">
+              <img src="{% url 'index' %}media/{{ user.photo }}" alt="">
+              <p class="user-name">{{ user.phone }}</p>
+            </div>
+            <ul>
+              <a href="{% url 'my_event' %}">
+                 {% if side_bar == 'my_event' %}
+                    <li class="active">我的事件</li>
+                 {% else %}
+                    <li>我的事件</li>
+                 {% endif %}
+              </a>
+              <a href="{% url 'update_password' %}">
+                 {% if side_bar == 'update_password' %}
+                    <li class="active">修改密码</li>
+                 {% else %}
+                    <li>修改密码</li>
+                {% endif %}
+              </a>
+              <a href="{% url 'update_uinfo' %}">
+                {% if side_bar == 'update_uinfo' %}
+                    <li class="active">个人信息</li>
+                 {% else %}
+                    <li>个人信息</li>
+                {% endif %}
+              </a>
+            </ul>
+          </div>
+          <div class="bottom-box">
+            <img src="{% url 'index' %}media/{{ user.photo }}" alt="">
+            <a href="{% url 'logout' %}">退出</a>
+          </div>
+        </div>
+        <div class="right-info-box">
+          <div class="event-box">
+            <p class="title">我的事件</p>
+            <div class="no-more-box">
+              <img src="{% static 'web/images/zanwu.png' %}" alt="zanwu">
+            </div>
+            <div class="event-list-box">
+              {% for event in event_list %}
+                  <div class="event-item">
+                    <div class="left-box">
+                      <p class="event-title">
+                          <span class="icon">
+                          </span>
+                          {{ event.title }}
+                          <span class="zc">{{ event.event_cat.name }}</span>
+                          <span class="sh">{{ event.status }}</span>
+                      </p>
+                      <p class="time">{{ event.created_at | hdatetime }}</p>
+                    </div>
+                    <div class="right-box">
+                      <a class="see-detail-btn" href="{% url 'event_detail' event.id %}">查看详情</a>
+                    </div>
+                  </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% include 'web/layout/bottom.html' %}
+{% endblock %}

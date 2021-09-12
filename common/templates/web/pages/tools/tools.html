@@ -16,73 +16,19 @@
       <img src="{% static 'web/images/banner_xiaogongju.png' %}" alt="banner">
     </div>
   </div>
-  <!-- 小工具 small-tool -->
   <div class="small-tool-container w1000">
     <ul class="small-tool-content">
-      <li>
-        <a href="{% url 'tools_detail' 1 %}" target="_blank" rel="noopener noreferrer">
-          <img src="https://iph.href.lu/90x90?fg=666666&bg=cccccc" alt="">
-          <p class="app-name">APP名称</p>
-          <p class="app-desc">app简介app简介app简介</p>
-        </a>
-      </li>
-      <li>
-        <a href="./toolDetail.html" target="_blank" rel="noopener noreferrer">
-          <img src="https://iph.href.lu/90x90?fg=666666&bg=cccccc" alt="">
-          <p class="app-name">APP名称</p>
-          <p class="app-desc">app简介app简介app简介</p>
-        </a>
-      </li>
-      <li>
-        <a href="./toolDetail.html" target="_blank" rel="noopener noreferrer">
-          <img src="https://iph.href.lu/90x90?fg=666666&bg=cccccc" alt="">
-          <p class="app-name">APP名称</p>
-          <p class="app-desc">app简介app简介app简介</p>
-        </a>
-      </li>
-      <li>
-        <a href="./toolDetail.html" target="_blank" rel="noopener noreferrer">
-          <img src="https://iph.href.lu/90x90?fg=666666&bg=cccccc" alt="">
-          <p class="app-name">APP名称</p>
-          <p class="app-desc">app简介app简介app简介</p>
-        </a>
-      </li>
-      <li>
-        <a href="./toolDetail.html" target="_blank" rel="noopener noreferrer">
-          <img src="https://iph.href.lu/90x90?fg=666666&bg=cccccc" alt="">
-          <p class="app-name">APP名称</p>
-          <p class="app-desc">app简介app简介app简介</p>
-        </a>
-      </li>
-      <li>
-        <a href="./toolDetail.html" target="_blank" rel="noopener noreferrer">
-          <img src="https://iph.href.lu/90x90?fg=666666&bg=cccccc" alt="">
-          <p class="app-name">APP名称</p>
-          <p class="app-desc">app简介app简介app简介</p>
-        </a>
-      </li>
+        {% for tool in tools_list %}
+          <li>
+            <a href="{% url 'tools_detail' tool.id %}" rel="noopener noreferrer">
+              <img src="{% url 'index' %}media/{{ tool.img }}" alt="">
+              <p class="app-name">{{ tool.name }}</p>
+              <p class="app-desc">{{ tool.excerpt }}</p>
+            </a>
+          </li>
+        {% endfor %}
     </ul>
   </div>
-  <!-- 联系我们 contact-us -->
-  <div class="contact-us-container w1200">
-    <div class="contact-us-title">
-      <p class="title">联系我们</p>
-      <p class="sub-title">遇到相关技术问题？请在线提交你所需的服务请求，最短2分钟内将有工程师联系帮助您解决处理。</p>
-    </div>
-    <div class="contact-us-content">
-      <div class="left-contact-box">
-        <form action="#">
-          <input type="text" class="contact-input" placeholder="客户名称">
-          <input type="text" class="contact-input" placeholder="联系方式">
-          <textarea class="contact-textarea" row="3" placeholder="请描述你遇到的问题"></textarea>
-          <div class="send-btn">发送</div>
-        </form>
-      </div>
-      <div class="right-contact-box">
-        <img src="https://iph.href.lu/535x315?fg=666666&bg=cccccc" alt="">
-      </div>
-    </div>
-
-  </div>
+  {% include 'web/layout/bottom.html' %}
 {% endblock %}
 
