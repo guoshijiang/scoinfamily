@@ -172,6 +172,12 @@ li {
 .el-input .el-input-right {
   cursor: pointer;
 }
+.el-input .el-input-right .count-time{
+  margin: 0;
+  margin-left: 5px;
+  font-size: 12px;
+}
+
 .el-button {
   background: #3F89F6;
   border-radius: 10px;
@@ -186,6 +192,8 @@ li {
   align-items: center;
   flex-shrink: 0;
   text-decoration: none;
+  outline: none;
+  border: none;
 }
 .el-button.block {
   width: 100%;
