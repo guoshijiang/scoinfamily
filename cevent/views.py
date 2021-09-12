@@ -4,7 +4,7 @@ from django.shortcuts import redirect, render
 from blogs.models import Tag, Category, BaseModel
 from common.helpers import paged_items, ok_json
 from common.pc_m import judge_pc_or_mobile
-from cevent.models import Event, EventCat, EventBack
+from cevent.models import Event, EventCat, EventBack, EventComment
 from blogs.models import Article
 from cevent.forms.pulish_form import EventForm
 from scauth.models import AuthUser
@@ -32,10 +32,13 @@ def event_detail(request, vid):
     nav_bar = "event"
     event = Event.objects.filter(id=vid).first()
     event_fb = EventBack.objects.filter(event=event).order_by("-id").first()
+    event_comment_list = EventComment.objects.filter(event=event).order_by("-id")
     user_agt = judge_pc_or_mobile(request.META.get("HTTP_USER_AGENT"))
     if user_agt is False:
+        event_comment_list = paged_items(request, event_comment_list)
         return render(request, 'web/pages/event/event_detail.html', locals())
     else:
+        event_comment_list = paged_items(request, event_comment_list)
         return render(request, 'web/pages/event/event_detail.html', locals())
 
 
@@ -66,4 +69,18 @@ def publish_event(request):
                 is_public=event_form.clean_is_public(),
             )
             return redirect("event")
+
+
+def create_comment(request):
+    event_id = int(request.POST.get("event_id"))
+    comment = request.POST.get("comment")
+    user_id = request.session.get("user_id")
+    user = AuthUser.objects.filter(id=user_id).first()
+    event = Event.objects.filter(id=event_id).first()
+    EventComment.objects.create(
+        user=user,
+        event=event,
+        content=comment
+    )
+    return redirect("event_detail", event_id)
 
