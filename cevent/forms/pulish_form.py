@@ -2,7 +2,7 @@
 
 import re
 from django import forms
-from cevent.models import Event
+from cevent.models import Event, EventCat
 from DjangoUeditor.forms import UEditorField
 
 
@@ -31,6 +31,10 @@ class EventForm(forms.ModelForm):
         widget=forms.widgets.TextInput(
             {"type": "password", "placeholder": "请输入黑客地址(选填)", "class": "el-input__inner"}
         )
+    )
+    event_cat = forms.ModelChoiceField(
+        empty_label="请选择",
+        queryset=EventCat.objects.filter(is_active=True)
     )
     is_public = forms.CharField(
         label="是否公开",
