@@ -10,11 +10,19 @@
       </ul>
     </div>
     <div class="right-container">
-      <div class="login-btn-box flex">
-        <a href="{% url 'login' %}" class="login-btn">
-          <img src="{% static 'web/images/suo.png' %}" alt="">
-          登录</a>
-        <a href="{% url 'register' %}" class="el-button mini">注册</a>
-      </div>
+      {% if request.session.is_login == True %}
+          <div class="login-btn-box flex">
+            <a href="{% url 'logout' %}" class="login-btn">注销</a>
+            <a href="{% url 'logout' %}" class="el-button mini">个人中心</a>
+          </div>
+      {% else %}
+           <div class="login-btn-box flex">
+            <a href="{% url 'login' %}" class="login-btn">
+              <img src="{% static 'web/images/suo.png' %}" alt="">
+              登录
+            </a>
+            <a href="{% url 'register' %}" class="el-button mini">注册</a>
+          </div>
+      {% endif %}
     </div>
   </div>

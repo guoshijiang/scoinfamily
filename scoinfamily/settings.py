@@ -58,7 +58,7 @@ DATABASES = {
         "NAME": "coinfamily",
         "USER": "root",
         "PASSWORD": "Wenwo2020!",
-        "HOST": "127.0.0.1",
+        "HOST": "60.205.1.144",
         "PORT": "3306",
         "OPTIONS": {"init_command": "SET sql_mode='STRICT_TRANS_TABLES'"},
     }

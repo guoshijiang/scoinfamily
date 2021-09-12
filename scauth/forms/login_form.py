@@ -20,7 +20,7 @@ class UserPwdLoginForm(forms.Form):
         label="密码",
         max_length=64,
         widget=forms.widgets.TextInput(
-            {"type": "password", "placeholder": "请输入密码", "class": "el-input"}
+            {"type": "password", "placeholder": "请输入密码", "class": "el-input__inner"}
         ),
         error_messages={"required": "请输入密码, 密码不能为空"},
     )

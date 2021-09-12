@@ -8,7 +8,6 @@ attrs==21.2.0
 backcall==0.2.0
 billiard==3.6.3.0
 bitmex==0.2.2
-bixinrpc @ file:///Users/bhex/ZhifishWorkspace/trade/lib/bixin-grpc/python
 bravado==11.0.3
 bravado-core==5.17.0
 captcha==0.3
