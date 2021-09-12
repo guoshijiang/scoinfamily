@@ -4,10 +4,11 @@
     <link rel="stylesheet" href="{% static 'web/css/event.css' %}">
 {% endblock %}
 {% block content %}
+{% include 'web/layout/header.html' %}
 <div class="content-box">
     <div class="w1200">
       <div class="banner-container w1200">
-        <img src="{% static 'images/banner_shijian.png' %}" alt="banner_fangfa">
+        <img src="{% static 'web/images/banner_shijian.png' %}" alt="banner_fangfa">
         <p class="banner-title">全球领先的数字资产<br />安全追踪平台</p>
       </div>
       <div class="w1000 event-container">
@@ -86,4 +87,5 @@
     $(".left-event-container").slide({ titOnClassName: 'active', titCell:".tab-title-container li",mainCell:".tab-content-container", trigger:"click" });
     $(".tab-switch-box").slide({ mainCell: '.content-switch-box', prevCell: '.prev', nextCell: '.next', effect:"left", autoPlay: true })
   </script>
+  {% include 'web/layout/bottom.html' %}
 {% endblock %}
