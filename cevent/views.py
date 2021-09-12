@@ -29,6 +29,7 @@ def event(request):
 def event_detail(request, vid):
     nav_bar = "event"
     event = Event.objects.filter(id=vid).first()
+    event_fb = EventBack.objects.filter(event=event).order_by("-id").first()
     user_agt = judge_pc_or_mobile(request.META.get("HTTP_USER_AGENT"))
     if user_agt is False:
         return render(request, 'web/pages/event/event_detail.html', locals())

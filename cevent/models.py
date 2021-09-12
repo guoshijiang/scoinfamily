@@ -91,6 +91,16 @@ class Event(BaseModel):
     views = models.PositiveIntegerField(
         default=0, verbose_name="事件浏览次数"
     )
+    check_time = models.DateTimeField(
+        db_index=True,
+        blank=True,
+        null=True,
+    )
+    solve_time = models.DateTimeField(
+        db_index=True,
+        blank=True,
+        null=True,
+    )
     is_active = models.BooleanField(
         default=True, verbose_name="是否是有效"
     )
