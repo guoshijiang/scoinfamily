@@ -12,7 +12,7 @@ class EventForm(forms.ModelForm):
         label="币种",
         max_length=64,
         widget=forms.widgets.TextInput(
-            {"placeholder": "请输入币种", "id": "inputEmail3"}
+            {"type": "text", "placeholder": "请输入币种", "id": "inputEmail3"}
         ),
         error_messages={"required": "请输入币种, 币种不能为空"},
     )
@@ -21,7 +21,7 @@ class EventForm(forms.ModelForm):
         label="我的地址",
         max_length=64,
         widget=forms.widgets.TextInput(
-            {"type": "password", "placeholder": "请输入自己的地址(选填)", "class": "el-input__inner"}
+            {"type": "text", "placeholder": "请输入自己的地址(选填)", "class": "el-input__inner"}
         )
     )
     hacker_address = forms.CharField(
@@ -29,7 +29,7 @@ class EventForm(forms.ModelForm):
         label="黑客地址",
         max_length=64,
         widget=forms.widgets.TextInput(
-            {"type": "password", "placeholder": "请输入黑客地址(选填)", "class": "el-input__inner"}
+            {"type": "text", "placeholder": "请输入黑客地址(选填)", "class": "el-input__inner"}
         )
     )
     event_cat = forms.ModelChoiceField(
@@ -48,7 +48,7 @@ class EventForm(forms.ModelForm):
         label="标题",
         max_length=64,
         widget=forms.widgets.TextInput(
-            {"type": "password", "placeholder": "请输入自己的地址(必填)", "class": "el-input__inner"}
+            {"type": "text", "placeholder": "请输入自己的地址(必填)", "class": "el-input__inner"}
         )
     )
     detail = UEditorField(
@@ -66,7 +66,7 @@ class EventForm(forms.ModelForm):
         label="邮箱",
         max_length=64,
         widget=forms.widgets.TextInput(
-            {"type": "password", "placeholder": "请输入自己的邮箱(必填)", "class": "el-input__inner"}
+            {"type": "text", "placeholder": "请输入自己的邮箱(必填)", "class": "el-input__inner"}
         )
     )
     weichat = forms.CharField(
@@ -74,14 +74,14 @@ class EventForm(forms.ModelForm):
         label="微信",
         max_length=64,
         widget=forms.widgets.TextInput(
-            {"type": "password", "placeholder": "请输入自己的微信(必填)", "class": "el-input__inner"}
+            {"type": "text", "placeholder": "请输入自己的微信(必填)", "class": "el-input__inner"}
         )
     )
 
     class Meta:
         model = Event
         fields = [
-            'coin', 'my_address', 'hacker_address', 'is_public', 'title', 'detail', 'email', 'weichat'
+            'coin', 'my_address', 'hacker_address', 'event_cat', 'is_public', 'title', 'detail', 'email', 'weichat'
         ]
 
     def __init__(self, request, *args, **kw):
@@ -101,6 +101,10 @@ class EventForm(forms.ModelForm):
     def clean_hacker_address(self):
         hacker_address = self.cleaned_data.get('hacker_address')
         return hacker_address
+
+    def clean_event_cat(self):
+        event_cat = self.cleaned_data.get('event_cat')
+        return event_cat
 
     def clean_is_public(self):
         is_public = self.cleaned_data.get('is_public')

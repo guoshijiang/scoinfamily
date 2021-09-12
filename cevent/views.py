@@ -17,7 +17,7 @@ def event(request):
     blog_list = Article.objects.filter(is_active=True).order_by("-id")[0:6]
     event_feedback = EventBack.objects.filter(is_active=True).order_by("-id")[0:16]
     event_cat_list = EventCat.objects.all()
-    event_list = Event.objects.filter(status__in=["WAIT_SOLUTE", "WAIT_BACK", "FINISH"]).order_by("-id")
+    event_list = Event.objects.filter(is_active=True).order_by("-id")
     if cat_id not in [0, "0", None]:
         event_list = event_list.filter(event_cat__id=cat_id)
     if user_agt is False:
@@ -55,15 +55,14 @@ def publish_event(request):
         if event_form.is_valid():
             Event.objects.create(
                 user=user,
-                event_cat="",
+                event_cat=event_form.clean_event_cat(),
                 email=event_form.clean_email(),
                 weichat=event_form.clean_weichat(),
                 coin=event_form.clean_coin(),
-                my_address=event_form.my_address,
-                hacker_address=event_form.hacker_address,
-                title=event_form.title,
+                my_address=event_form.clean_my_address(),
+                hacker_address=event_form.clean_hacker_address(),
+                title=event_form.clean_title(),
                 detail=event_form.clean_detail(),
-                mark="",
                 is_public=event_form.clean_is_public(),
             )
             return redirect("event")
