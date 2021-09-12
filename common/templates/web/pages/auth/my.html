@@ -1,0 +1,225 @@
+{% extends 'web/layout/main.html' %}
+{% load staticfiles cf_tags%}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'web/css/my.css' %}">
+{% endblock %}
+{% block content %}
+{% include 'web/layout/header.html' %}
+ <div class="content-box">
+    <div class="w1200">
+      <p class="breadcrumb-navigation">
+        <a href="#" target="_blank">首页</a> > <a href="#" target="_blank">个人中心</a>
+      </p>
+      <div class="my-info-container">
+        <div class="left-info-box">
+          <div class="top-box">
+            <div class="account-info">
+              <img src="https://iph.href.lu/80x80?fg=666666&bg=cccccc" alt="">
+              <p class="user-name">19817261510</p>
+            </div>
+            <ul>
+              <li class="active">我的事件</li>
+              <li>修改密码</li>
+              <li>个人信息</li>
+              <li>修改头像</li>
+            </ul>
+          </div>
+          <div class="bottom-box">
+            <img src="https://iph.href.lu/18x18?fg=666666&bg=cccccc" alt="">
+            <p>推出</p>
+          </div>
+        </div>
+        <div class="right-info-box">
+          <div class="event-box">
+            <p class="title">我的事件</p>
+            <div class="no-more-box">
+              <img src="./images/zanwu.png" alt="zanwu">
+            </div>
+            <div class="event-list-box">
+              <div class="event-item">
+                <div class="left-box">
+                  <p class="event-title"><span class="icon"></span>30ETH被盗，183EOS被盗<span class="zc">资产失窃</span><span class="sh">未审核</span></p>
+                  <p class="time">2021-06-20 10:50:11</p>
+                  <div class="comment-num"><img src="https://iph.href.lu/18x15?fg=666666&bg=cccccc" alt=""><p>12</p></div>
+                </div>
+                <div class="right-box">
+                  <a class="see-detail-btn" href="./eventDetail_my.html" target="_blank">查看详情</a>
+                </div>
+              </div>
+              <div class="event-item">
+                <div class="left-box">
+                  <p class="event-title"><span class="icon"></span>30ETH被盗，183EOS被盗<span class="zc">资产失窃</span><span class="sh">未审核</span></p>
+                  <p class="time">2021-06-20 10:50:11</p>
+                  <div class="comment-num"><img src="https://iph.href.lu/18x15?fg=666666&bg=cccccc" alt=""><p>12</p></div>
+                </div>
+                <div class="right-box">
+                  <a class="see-detail-btn" href="./eventDetail_my.html" target="_blank">查看详情</a>
+                </div>
+              </div>
+              <div class="event-item">
+                <div class="left-box">
+                  <p class="event-title"><span class="icon"></span>30ETH被盗，183EOS被盗<span class="zc">资产失窃</span><span class="sh">未审核</span></p>
+                  <p class="time">2021-06-20 10:50:11</p>
+                  <div class="comment-num"><img src="https://iph.href.lu/18x15?fg=666666&bg=cccccc" alt=""><p>12</p></div>
+                </div>
+                <div class="right-box">
+                  <a class="see-detail-btn" href="./eventDetail_my.html" target="_blank">查看详情</a>
+                </div>
+              </div>
+              <div class="event-item">
+                <div class="left-box">
+                  <p class="event-title"><span class="icon"></span>30ETH被盗，183EOS被盗<span class="zc">资产失窃</span><span class="sh">未审核</span></p>
+                  <p class="time">2021-06-20 10:50:11</p>
+                  <div class="comment-num"><img src="https://iph.href.lu/18x15?fg=666666&bg=cccccc" alt=""><p>12</p></div>
+                </div>
+                <div class="right-box">
+                  <a class="see-detail-btn" href="./eventDetail_my.html" target="_blank">查看详情</a>
+                </div>
+              </div>
+              <div class="event-item">
+                <div class="left-box">
+                  <p class="event-title"><span class="icon"></span>30ETH被盗，183EOS被盗<span class="zc">资产失窃</span><span class="sh">未审核</span></p>
+                  <p class="time">2021-06-20 10:50:11</p>
+                  <div class="comment-num"><img src="https://iph.href.lu/18x15?fg=666666&bg=cccccc" alt=""><p>12</p></div>
+                </div>
+                <div class="right-box">
+                  <a class="see-detail-btn" href="./eventDetail_my.html" target="_blank">查看详情</a>
+                </div>
+              </div>
+              <div class="event-item">
+                <div class="left-box">
+                  <p class="event-title"><span class="icon"></span>30ETH被盗，183EOS被盗<span class="zc">资产失窃</span><span class="sh">未审核</span></p>
+                  <p class="time">2021-06-20 10:50:11</p>
+                  <div class="comment-num"><img src="https://iph.href.lu/18x15?fg=666666&bg=cccccc" alt=""><p>12</p></div>
+                </div>
+                <div class="right-box">
+                  <a class="see-detail-btn" href="./eventDetail_my.html" target="_blank">查看详情</a>
+                </div>
+              </div>
+              <div class="event-item">
+                <div class="left-box">
+                  <p class="event-title"><span class="icon"></span>30ETH被盗，183EOS被盗<span class="zc">资产失窃</span><span class="sh">未审核</span></p>
+                  <p class="time">2021-06-20 10:50:11</p>
+                  <div class="comment-num"><img src="https://iph.href.lu/18x15?fg=666666&bg=cccccc" alt=""><p>12</p></div>
+                </div>
+                <div class="right-box">
+                  <a class="see-detail-btn" href="./eventDetail_my.html" target="_blank">查看详情</a>
+                </div>
+              </div>
+              <div class="event-item">
+                <div class="left-box">
+                  <p class="event-title"><span class="icon"></span>30ETH被盗，183EOS被盗<span class="zc">资产失窃</span><span class="sh">未审核</span></p>
+                  <p class="time">2021-06-20 10:50:11</p>
+                  <div class="comment-num"><img src="https://iph.href.lu/18x15?fg=666666&bg=cccccc" alt=""><p>12</p></div>
+                </div>
+                <div class="right-box">
+                  <a class="see-detail-btn" href="./eventDetail_my.html" target="_blank">查看详情</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modify-box">
+            <p class="title">修改密码</p>
+            <div class="modify-content">
+              <form action="#" class="el-form">
+                <div class="el-input">
+                  <div class="el-label-box">
+                    <img class="el-icon" src="./images/mima.png" alt="yonghu" />
+                  </div>
+                  <input type="password" class="el-input__inner" placeholder="旧密码">
+                  <div class="el-input-right">
+                    <img class="el-icon" src="./images/yanjing.png" alt="yanjing" />
+                  </div>
+                </div>
+                <div class="el-input">
+                  <div class="el-label-box">
+                    <img class="el-icon" src="./images/mima.png" alt="yonghu" />
+                  </div>
+                  <input type="password" class="el-input__inner" placeholder="新密码">
+                  <div class="el-input-right">
+                    <img class="el-icon" src="./images/yanjing.png" alt="yanjing" />
+                  </div>
+                </div>
+                <div class="el-input">
+                  <div class="el-label-box">
+                    <img class="el-icon" src="./images/mima.png" alt="yonghu" />
+                  </div>
+                  <input type="password" class="el-input__inner" placeholder="确认新密码">
+                  <div class="el-input-right">
+                    <img class="el-icon" src="./images/yanjing.png" alt="yanjing" />
+                  </div>
+                </div>
+                <div class="el-button block">修改</div>
+              </form>
+            </div>
+          </div>
+          <div class="personal-box">
+            <p class="title">个人信息</p>
+            <div class="personal-content">
+              <div class="img-upload">
+                <img id="pic" style="width:100px;height:100px;border-radius:50%;" src="./images/touxiang_d.png">
+                <input id="upload" name="file" accept="image/*" type="file" style="display: none">
+                <p>修改头像</p>
+              </div>
+              <div class="el-input">
+                <div class="el-label-box">
+                  <img class="el-icon" src="./images/yonghu-2.png" alt="yonghu" />
+                </div>
+                <input type="text" class="el-input__inner" placeholder="用户名">
+              </div>
+              <div class="el-button block">修改</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $('.my-info-container').slide({ trigger:"click", titCell: '.left-info-box .top-box ul li', mainCell: '.right-info-box', titOnClassName: 'active', })
+    $(function() {
+      $("#pic").click(function() {
+          $("#upload").click(); //隐藏了input:file样式后，点击头像就可以本地上传
+          $("#upload").on("change", function() {
+              var objUrl = getObjectURL(this.files[0]); //获取图片的路径，该路径不是图片在本地的路径
+              if (objUrl) {
+                  $("#pic").attr("src", objUrl); //将图片路径存入src中，显示出图片
+                  upimg();
+              }
+          });
+      });
+  });
+  //建立一?可存取到?file的url
+  function getObjectURL(file) {
+      var url = null;
+      if (window.createObjectURL != undefined) { // basic
+          url = window.createObjectURL(file);
+      } else if (window.URL != undefined) { // mozilla(firefox)
+          url = window.URL.createObjectURL(file);
+      } else if (window.webkitURL != undefined) { // webkit or chrome
+          url = window.webkitURL.createObjectURL(file);
+      }
+      return url;
+  }
+  //上传头像到服务器
+  function upimg() {
+      console.log(344)
+      var pic = $('#upload')[0].files[0];
+      var file = new FormData();
+      file.append('image', pic);
+      $.ajax({
+          url: "/uploadImg",
+          type: "post",
+          data: file,
+          cache: false,
+          contentType: false,
+          processData: false,
+          success: function(data) {
+              console.log(data);
+              var res = data;
+              $("#resimg").append("<img src='/" + res + "'>")
+          }
+      });
+  }
+  </script>
+{% include 'web/layout/bottom.html' %}
+{% endblock %}
