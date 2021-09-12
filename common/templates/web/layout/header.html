@@ -14,9 +14,9 @@
             <li><a href="{% url 'event' %}">事件</a><span class="active-line"></span></li>
         {% endif %}
         {% if nav_bar == "blog" %}
-            <li class="active"><a href="{% url 'blogs' %}">找回方案</a><span class="active-line"></span></li>
+            <li class="active"><a href="{% url 'blogs' %}">博客</a><span class="active-line"></span></li>
          {% else %}
-            <li><a href="{% url 'blogs' %}">找回方案</a><span class="active-line"></span></li>
+            <li><a href="{% url 'blogs' %}">博客</a><span class="active-line"></span></li>
         {% endif %}
         {% if nav_bar == "tools" %}
             <li class="active"><a href="{% url  'tools' %}">小工具</a><span class="active-line"></span></li>

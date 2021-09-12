@@ -49,21 +49,7 @@
                   </li>
               {% endfor %}
             </ul>
-            <ul class="pagination">
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                </a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
-            </ul>
+            {% include 'web/layout/pagination.html' with items=event_list %}
           </div>
         </div>
         <div class="right-event-container">
@@ -102,5 +88,5 @@
     // $(".left-event-container").slide({ titOnClassName: 'active', titCell:".tab-title-container li",mainCell:".tab-content-container", trigger:"click" });
     $(".tab-switch-box").slide({ mainCell: '.content-switch-box', prevCell: '.prev', nextCell: '.next', effect:"left", autoPlay: true })
   </script>
-  {% include 'web/layout/bottom.html' %}
+   {% include 'web/layout/bottom.html' %}
 {% endblock %}

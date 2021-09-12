@@ -87,7 +87,7 @@ def get_page(request: HttpRequest) -> int:
     return page
 
 
-PAGE_SIZE = 10
+PAGE_SIZE = 20
 
 
 def paged_items(

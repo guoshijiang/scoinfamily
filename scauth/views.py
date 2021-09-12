@@ -11,6 +11,8 @@ from scauth.forms.login_form import UserPwdLoginForm, UserCodeLoginForm
 from scauth.forms.forget_form import ForgetPasswordForm
 from scauth.models import AuthUser
 from cevent.models import Event
+from scauth.forms.update_pwd_form import UpdatePasswordForm
+from scauth.forms.update_uinfo_form import UpdateUifForm
 
 
 def sms_send(request):
@@ -141,13 +143,28 @@ def my_event(request):
 
 def update_password(request):
     side_bar = 'update_password'
+    user_agt = judge_pc_or_mobile(request.META.get("HTTP_USER_AGENT"))
     user_id = request.session.get("user_id")
     user = AuthUser.objects.filter(id=user_id).first()
-    user_agt = judge_pc_or_mobile(request.META.get("HTTP_USER_AGENT"))
-    if user_agt is False:
-        return render(request, 'web/pages/auth/update_password.html', locals())
-    else:
-        return render(request, 'web/pages/auth/update_password.html', locals())
+    if request.method == "GET":
+        update_pwd_form = UpdatePasswordForm(user, request)
+        if user_agt is False:
+            return render(request, 'web/pages/auth/update_password.html', locals())
+        else:
+            return render(request, 'web/pages/auth/update_password.html', locals())
+    if request.method == "POST":
+        update_pwd_form = UpdatePasswordForm(user, request, request.POST)
+        if update_pwd_form.is_valid():
+            update_pwd_form.update_password()
+            request.session["is_login"] = False
+            return redirect("login")
+        else:
+            error = update_pwd_form.errors
+            return render(
+                request,
+                "web/pages/auth/update_password.html",
+                {'update_pwd_form': update_pwd_form, 'error': error}
+            )
 
 
 def update_uinfo(request):
@@ -155,8 +172,24 @@ def update_uinfo(request):
     user_id = request.session.get("user_id")
     user = AuthUser.objects.filter(id=user_id).first()
     user_agt = judge_pc_or_mobile(request.META.get("HTTP_USER_AGENT"))
-    if user_agt is False:
-        return render(request, 'web/pages/auth/update_uinfo.html', locals())
-    else:
-        return render(request, 'web/pages/auth/update_uinfo.html', locals())
-
+    if request.method == "GET":
+        uinfo_form = UpdateUifForm(request, user, instance=user)
+        if user_agt is False:
+            return render(request, 'web/pages/auth/update_uinfo.html', locals())
+        else:
+            return render(request, 'web/pages/auth/update_uinfo.html', locals())
+    elif request.method == "POST":
+        uinfo_form = UpdateUifForm(request, user, request.POST, request.FILES)
+        if uinfo_form.is_valid():
+            uinfo_form.save_user_info()
+            return redirect("update_uinfo")
+        else:
+            error = uinfo_form.errors
+            return render(
+                request, "web/pages/auth/update_uinfo.html",
+                {
+                    'user': user,
+                    'uinfo_form': uinfo_form,
+                    'error': error
+                }
+            )
