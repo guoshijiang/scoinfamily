@@ -30,9 +30,17 @@ def event(request):
 
 def event_detail(request, vid):
     nav_bar = "event"
+    cwindow = request.GET.get("cwindow", "")
+    rwindow = request.GET.get("rwindow", "")
+    pwindow = request.GET.get("pwindow", "")
+    frpid = int(request.GET.get("frpid", 0))
     event = Event.objects.filter(id=vid).first()
     event_fb = EventBack.objects.filter(event=event).order_by("-id").first()
     event_comment_list = EventComment.objects.filter(event=event).order_by("-id")
+    for event_comment in event_comment_list:
+        event_comment.reply = event_comment_list.filter(father_event_cy=event_comment).order_by("-id")
+        event_comment.reply_lastest = event_comment_list.filter(father_event_cy=event_comment).order_by("-id").first()
+        event_comment.nums = event_comment_list.filter(father_event_cy=event_comment).count()
     user_agt = judge_pc_or_mobile(request.META.get("HTTP_USER_AGENT"))
     if user_agt is False:
         event_comment_list = paged_items(request, event_comment_list)
@@ -71,16 +79,22 @@ def publish_event(request):
             return redirect("event")
 
 
-def create_comment(request):
-    event_id = int(request.POST.get("event_id"))
-    comment = request.POST.get("comment")
-    user_id = request.session.get("user_id")
+def event_cmt_reply(request, eid):
+    father_event_id = int(request.POST.get("father_event_id", 0))
+    content = request.POST.get("content", "")
+    user_id = int(request.session.get("user_id"))
     user = AuthUser.objects.filter(id=user_id).first()
-    event = Event.objects.filter(id=event_id).first()
+    event = Event.objects.filter(id=eid).order_by("-id").first()
+    if father_event_id not in ["0", 0]:
+        father_event_cy=EventComment.objects.filter(id=father_event_id).first()
+    else:
+        father_event_cy = None
     EventComment.objects.create(
         user=user,
         event=event,
-        content=comment
+        father_event_cy=father_event_cy,
+        content=content,
     )
-    return redirect("event_detail", event_id)
+    return redirect("event_detail", eid)
+
 

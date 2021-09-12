@@ -49,28 +49,31 @@
         <div class="right-info-box">
           <div class="event-box">
             <p class="title">我的事件</p>
+            {% if event_list %}
+                <div class="event-list-box">
+                  {% for event in event_list %}
+                      <div class="event-item">
+                        <div class="left-box">
+                          <p class="event-title">
+                              <span class="icon">
+                              </span>
+                              {{ event.title }}
+                              <span class="zc">{{ event.event_cat.name }}</span>
+                              <span class="sh">{{ event.status | event_status }}</span>
+                          </p>
+                          <p class="time">{{ event.created_at | hdatetime }}</p>
+                        </div>
+                        <div class="right-box">
+                          <a class="see-detail-btn" href="{% url 'event_detail' event.id %}">查看详情</a>
+                        </div>
+                      </div>
+                  {% endfor %}
+                </div>
+            {% else %}
             <div class="no-more-box">
               <img src="{% static 'web/images/zanwu.png' %}" alt="zanwu">
             </div>
-            <div class="event-list-box">
-              {% for event in event_list %}
-                  <div class="event-item">
-                    <div class="left-box">
-                      <p class="event-title">
-                          <span class="icon">
-                          </span>
-                          {{ event.title }}
-                          <span class="zc">{{ event.event_cat.name }}</span>
-                          <span class="sh">{{ event.status }}</span>
-                      </p>
-                      <p class="time">{{ event.created_at | hdatetime }}</p>
-                    </div>
-                    <div class="right-box">
-                      <a class="see-detail-btn" href="{% url 'event_detail' event.id %}">查看详情</a>
-                    </div>
-                  </div>
-              {% endfor %}
-            </div>
+          {% endif %}
           </div>
         </div>
       </div>

@@ -15,7 +15,6 @@ def index(request):
     lst_event = Event.objects.filter(
         status__in=["WAIT_SOLUTE", "WAIT_BACK", "FINISH"]
     ).order_by("-id")[0:10]
-    print("lst_event =", lst_event)
     lst_arctcle = Article.objects.filter(is_active=True)[0:3]
     lst_tools = Tools.objects.filter(is_active=True)[0:8]
     if user_agt is False:

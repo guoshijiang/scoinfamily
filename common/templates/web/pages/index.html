@@ -10,7 +10,7 @@
       <p class="banner-title">币家<br />帮丢失的币回家</p>
       <p class="english-title">COINFAMILY</p>
       <p class="english-sub-title"><span>H</span>ELP BRING HOME LOSTMONEY</p>
-      <a href="#" class="el-button primary join-btn" target="_blank">马上参与</a>
+      <a href="#" class="el-button primary join-btn">马上参与</a>
     </div>
     <div class="right-banner">
       <img src="{% static 'web/images/banner.png' %}" alt="banner">
@@ -83,7 +83,7 @@
           {% endfor %}
         </ul>
         {% if lst_arctcle %}
-            <a href="#" class="see-more" target="_blank">查看更多>></a>
+            <a href="{% url 'blogs' %}" class="see-more">查看更多>></a>
         {% endif %}
       </div>
     <div class="small-tool-container w1000">
@@ -94,7 +94,7 @@
         <ul class="small-tool-content">
           {% for tool in lst_tools %}
               <li>
-                <a href="#" target="_blank" rel="noopener noreferrer">
+                <a href="{% url 'tools_detail' tool.id %}" rel="noopener noreferrer">
                   <img src="{% url 'index' %}media/{{ tool.img }}" alt="">
                   <p class="app-name">{{ tool.name }}</p>
                   <p class="app-desc">{{ tool.excerpt }}</p>

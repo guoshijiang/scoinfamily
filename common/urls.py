@@ -6,7 +6,8 @@ from common.views import index
 from cevent.views import (
     event,
     event_detail,
-    publish_event
+    publish_event,
+    event_cmt_reply
 )
 from blogs.views import (
     blogs,
@@ -33,6 +34,7 @@ urlpatterns: List[Any] = [
     path(r'event', event, name='event'),
     path(r'<int:vid>/event_detail', event_detail, name='event_detail'),
     path(r'publish_event', publish_event, name='publish_event'),
+    path(r'<int:eid>/event_cmt_reply', event_cmt_reply, name='event_cmt_reply'),
 
     path(r'blogs', blogs, name='blogs'),
     path(r'<int:id>/blog_detail', blog_detail, name='blog_detail'),

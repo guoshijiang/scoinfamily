@@ -1,0 +1,8 @@
+{% load staticfiles cf_tags%}
+<form method="post" action="{% url 'event_cmt_reply' event.id %}">
+    <input type="hidden" name="father_event_id" value="{{ event_cmt.id }}">
+    <div class="text-area-box">
+      <textarea row="8" name="content" style="height:60px;outline: none;padding: 20px;box-sizing: border-box;" placeholder="请输入内容" class="text-area el-textarea_inner"></textarea>
+      <button type="submit" class="el-button primary" style="width: 100px;">回复</button>
+    </div>
+</form>
