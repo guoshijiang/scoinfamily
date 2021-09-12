@@ -27,6 +27,9 @@ td {
   padding: 0;
   box-sizing: border-box;
 }
+a:hover{
+  text-decoration: none;
+}
 fieldset,
 img {
   border: 0;
