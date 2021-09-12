@@ -75,28 +75,21 @@
   color: #333333;
   margin-left: 20px;
 }
-.footer-container {
-  width: 100%;
-  height: 80px;
-  background-color: #3F89F6;
-}
-.footer-container p {
-  font-size: 16px;
-  font-family: SourceHanSansSC;
-  font-weight: 400;
-  color: #FFFFFF;
-  line-height: 80px;
-  text-align: center;
-}
 .banner-container {
-  height: 453px;
-  padding: 91px 157px 36px 115px;
+  height: 340px;
+  padding: 11px 158px 3px 116px;
+  box-sizing: border-box;
+  background: linear-gradient(0deg, #03043D, #10249C);
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  overflow: hidden;
 }
 .banner-container .left-banner .banner-title {
   font-size: 48px;
   font-family: PingFang SC;
   font-weight: bold;
-  color: #13233C;
+  color: #fff;
   line-height: 60px;
   margin-bottom: 20px;
 }
@@ -132,50 +125,22 @@
   align-items: center;
   margin-bottom: 160px;
 }
-.currency-container li .currency-icon {
-  width: 40px;
-  height: 40px;
-}
-.currency-container li .name-box {
+.currency-container li {
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
-.currency-container li .name-box .currency-name {
-  font-size: 10px;
-  font-family: PingFang SC;
-  font-weight: 400;
-  color: #B4B5B8;
-  line-height: 33px;
+.currency-container li .currency-icon {
+  width: 60px;
+  height: 60px;
 }
-.currency-container li .name-box .currency-rate {
-  padding: 8px 12px;
-  height: 28px;
-  margin-left: 10px;
-  background: #2DB580;
-  border-radius: 12px;
-  font-size: 12px;
-  font-family: PingFang SC;
-  font-weight: 400;
-  color: #FFFFFF;
-  line-height: 12px;
-}
-.currency-container li .name-box .currency-rate.red {
-  background: #F04716;
-}
+
 .currency-container li .price {
-  font-size: 24px;
+  font-size: 20px;
   font-family: PingFang SC;
-  font-weight: 600;
+  font-weight: 400;
   color: #222222;
-  line-height: 32px;
-  margin: 5px 0 10px;
-}
-.currency-container li .dollar-price {
-  font-size: 12px;
-  font-family: PingFang SC;
-  font-weight: 600;
-  color: #B4B5B8;
-  line-height: 12px;
+  margin-top: 20px;
 }
 .currency-event-container .currency-event-content {
   width: 100%;
@@ -184,7 +149,6 @@
 .currency-event-container .currency-event-content .currency-event-item {
   position: relative;
   width: 100%;
-  height: 133px;
   background: #FFFFFF;
   box-shadow: 0px 5px 20px 0px rgba(63, 137, 246, 0.1);
   border-radius: 10px;
@@ -280,7 +244,6 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   text-decoration: none;
 }
 .recovery-scheme-container .recovery-scheme-content li:hover {
@@ -297,7 +260,14 @@
   font-family: PingFang SC;
   font-weight: bold;
   color: #101010;
-  line-height: 24px;
+  line-height: 30px;
+  text-align: justify;
+  width: 100%;
+  display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+overflow: hidden;
+margin-top: 50px;
 }
 .recovery-scheme-container .recovery-scheme-content li .recovery-scheme-desc {
   font-size: 16px;
@@ -306,6 +276,10 @@
   color: #999999;
   line-height: 25px;
   text-align: justify;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
 }
 .small-tool-container {
   margin-top: 100px;
@@ -345,6 +319,11 @@
   color: #333333;
   line-height: 27px;
   margin-top: 26px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  margin-top: 50px;
 }
 .small-tool-container .small-tool-content li .app-desc {
   margin-top: 22px;
@@ -353,4 +332,9 @@
   font-weight: 600;
   color: #B4B5B8;
   line-height: 16px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-top: 50px;
 }

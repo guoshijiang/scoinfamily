@@ -32,7 +32,7 @@
            {% endfor %}
           </ul>
           <div class="tab-content-container">
-            <ul>
+            <ul class="tab-list">
               {% for event in event_list %}
                   <li>
                     <div class="left-info-box">
@@ -48,6 +48,21 @@
                     <a class="right-btn-box" href="{% url 'event_detail' event.id %}">查看详情</a>
                   </li>
               {% endfor %}
+            </ul>
+            <ul class="pagination">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -84,7 +99,7 @@
     </div>
   </div>
   <script>
-    $(".left-event-container").slide({ titOnClassName: 'active', titCell:".tab-title-container li",mainCell:".tab-content-container", trigger:"click" });
+    // $(".left-event-container").slide({ titOnClassName: 'active', titCell:".tab-title-container li",mainCell:".tab-content-container", trigger:"click" });
     $(".tab-switch-box").slide({ mainCell: '.content-switch-box', prevCell: '.prev', nextCell: '.next', effect:"left", autoPlay: true })
   </script>
   {% include 'web/layout/bottom.html' %}
