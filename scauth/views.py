@@ -126,4 +126,13 @@ def forget(request):
             )
 
 
+def user_info(request):
+    user_agt = judge_pc_or_mobile(request.META.get("HTTP_USER_AGENT"))
+    if user_agt is False:
+        return render(request, 'web/pages/auth/my.html', locals())
+    else:
+        return render(request, 'web/pages/auth/my.html', locals())
+
+
+
 

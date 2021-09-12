@@ -13,7 +13,7 @@
       {% if request.session.is_login == True %}
           <div class="login-btn-box flex">
             <a href="{% url 'logout' %}" class="login-btn">注销</a>
-            <a href="{% url 'logout' %}" class="el-button mini">个人中心</a>
+            <a href="{% url 'user_info' %}" class="el-button mini">个人中心</a>
           </div>
       {% else %}
            <div class="login-btn-box flex">

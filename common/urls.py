@@ -8,7 +8,10 @@ from cevent.views import (
     event_detail,
     publish_event
 )
-from blogs.views import recovery_scheme
+from blogs.views import (
+    recovery_scheme,
+    blog_detail
+)
 from tools.views import (
     tools,
     tools_detail
@@ -18,7 +21,8 @@ from scauth.views import (
     login,
     register,
     forget,
-    logout
+    logout,
+    user_info
 )
 
 
@@ -29,6 +33,7 @@ urlpatterns: List[Any] = [
     path(r'publish_event', publish_event, name='publish_event'),
 
     path(r'recovery_scheme', recovery_scheme, name='recovery_scheme'),
+    path(r'<int:id>/blog_detail', blog_detail, name='blog_detail'),
 
     path(r'tools', tools, name='tools'),
     path(r'<int:tid>/tools_detail', tools_detail, name='tools_detail'),
@@ -38,4 +43,5 @@ urlpatterns: List[Any] = [
     path(r'login', login, name='login'),
     path(r'register', register, name='register'),
     path(r'forget', forget, name='forget'),
+    path(r'user_info', user_info, name='user_info'),
 ]
