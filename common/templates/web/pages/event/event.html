@@ -15,7 +15,7 @@
         <div class="left-event-container">
           <div class="publish-btn-box">
             <p>致力于建设一个高效的安全协同网络，帮助数字资产用户进行溯源、追币、私钥找回等服务</p>
-            <a class="publish-btn" href="{% url 'publish_event' %}" target="_blank">发布事件</a>
+            <a class="publish-btn" href="{% url 'publish_event' %}">发布事件</a>
           </div>
           <ul class="tab-title-container">
             {% if cat_id == 0 %}
@@ -40,7 +40,7 @@
                         <img src="{% url 'index' %}media/{{ event.user.photo }}" alt="">
                       </div>
                       <div class="info-box">
-                        <p class="name">{{ event.user.name }}<span class="zc">{{ event.event_cat.name }}</span><span class="sh">{{ event.status }}</span></p>
+                        <p class="name">{{ event.user.name }}<span class="zc">{{ event.event_cat.name }}</span><span class="sh">{{ event.status | event_status }}</span></p>
                         <p class="desc">{{ event.title }}</p>
                         <p class="time">{{ event.created_at | hdatetime }}</p>
                       </div>

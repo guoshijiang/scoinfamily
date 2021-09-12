@@ -59,7 +59,7 @@
                               </span>
                               {{ event.title }}
                               <span class="zc">{{ event.event_cat.name }}</span>
-                              <span class="sh">{{ event.status }}</span>
+                              <span class="sh">{{ event.status | event_status }}</span>
                           </p>
                           <p class="time">{{ event.created_at | hdatetime }}</p>
                         </div>
