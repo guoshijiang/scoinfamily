@@ -80,63 +80,71 @@
             </div>
           </div>
         </div>
-        <div class="comment-box">
-          <textarea class="comment-text-area" rows="10" placeholder="说点什么"></textarea>
-          <div class="btn-box">
-            <div class="comment-btn">评论</div>
-          </div>
-        </div>
-        <!-- 全部评论 all-comment -->
+       <form method="post" action="{% url 'event_cmt_reply' event.id %}">
+          <div class="comment-box">
+              <textarea name="content" class="comment-text-area" rows="10" placeholder="说点什么"></textarea>
+              <div class="btn-box">
+                <button type="submit" class="comment-btn">评论</button>
+              </div>
+         </div>
+       </form>
         <div class="all-comment-container forum-content-container">
           <p class="title">全部评论</p>
           <div class="comment-list-box">
-            <div
-              class="comment-item"
-            >
-              <div class="top-comment">
-                <div class="img-box"><img src="{% static 'web/images/touxiang_d.png' %}" alt=""></div>
-                <div class="right-info-box">
-                  <p class="name">用户名<span>2021-08-14 02:36:31</span></p>
-                  <p class="content">评论内容评论内容评论内容评论内容</p>
-                  <div class="reply-box">
-                    <div class="left">
-                      <div class="small-img-box"><img src="{% static 'web/images/touxiang_d.png' %}" alt=""></div>
-                      <span class="num">1 条回复</span>
-                      <span class="text">最后回复 2021-08-14 02:36:31</span>
-                      <img src="{% static 'web/images/icon-right.png' %}" alt="" style="width: 14px;height: 14px;cursor: pointer;">
-                      <img src="{% static 'web/images/icon-bottom.png' %}" alt="" style="width: 14px;height: 14px;cursor: pointer;">
+            {% for event_cmt in event_comment_list %}
+                <div class="comment-item">
+                  <div class="top-comment">
+                    <div class="img-box">
+                        {% if event_cmt.user.photo %}
+                            <img src="{% url 'index' %}media/{{ event_cmt.user.photo }}" alt="">
+                        {% else %}
+                            <img src="{% static 'web/images/touxiang_d.png' %}" alt="">
+                        {% endif %}
                     </div>
-                    <div class="left" v-else></div>
-                    <div class="right">
-                      <a class="el-button primary" href="#" target="_blank" style="width: 80px;height: 32px;margin-right: 10px;">登录</a>
-                      <div class="el-button primary" style="width: 80px;height: 32px;margin-right: 10px;">回复</div>
-                      <div class="el-button primary" style="width: 80px;height: 32px;">收起</div>
-                    </div>
-                  </div>
-                  <div class="reply-list"> <!--  添加class： reply-hidden 会隐藏 -->
-                    <ul>
-                      <li
-                      >
-                        <div class="left-header-img"><img src="{% static 'web/images/touxiang_d.png' %}" alt=""></div>
-                        <div class="right-reply-info-box">
-                          <p><span class="name">用户名<span class="time">2021-08-14 02:36:31</span></span></p>
-                          <p class="reply-text">评论内容</p>
+                    <div class="right-info-box">
+                      <p class="name">{{ event_cmt.user.name }}<span>{{ event_cmt.created | hdatetime }}</span></p>
+                      <p class="content">{{ event_cmt.content }}</p>
+                         <div class="reply-box">
+                           {% if event_cmt.reply %}
+                            <div class="left">
+                              {% if event_cmt.reply_lastest %}
+                                  <div class="small-img-box">
+                                       {% if event_cmt.reply_lastest.user.photo %}
+                                        <img src="{% url 'index' %}media/{{ event_cmt.reply_lastest.user.photo }}" alt="">
+                                     {% else %}
+                                        <img src="{% static 'images/touxiang_d.png' %}" alt="">
+                                     {% endif %}
+                                  </div>
+                                  <span class="num">{{ event_cmt.nums }} 条回复</span>
+                                  <span class="text">最后回复 {{ event_cmt.reply_lastest.created_at | hdatetime  }}</span>
+                              {% endif %}
+                              {% if pwindow == "popen" and event_cmt.id == frpid %}
+                                <a href="{% url 'event_detail' event.id %}?pwindow=pclose&frpid={{ event_cmt.id }}">
+                                   <img src="{% static 'web/images/icon-bottom.png' %}" alt="" style="width: 14px;height: 14px;cursor: pointer;">
+                                </a>
+                              {% else %}
+                                <a href="{% url 'event_detail' event.id %}?pwindow=popen&frpid={{ event_cmt.id }}">
+                                    <img src="{% static 'web/images/icon-right.png' %}" alt="" style="width: 14px;height: 14px;cursor: pointer;">
+                                </a>
+                              {% endif %}
+                           </div>
+                          {% endif %}
+                            <div class="left"></div>
+                            <div class="right">
+                              <a href="{% url 'event_detail' event.id %}?rwindow=ropen&frpid={{ event_cmt.id }}" class="el-button primary" style="width: 80px;height: 32px;margin-right: 10px;">回复</a>
+                              <a href="{% url 'event_detail' event.id %}?rwindow=rclose&frpid={{ event_cmt.id }}" class="el-button primary" style="width: 80px;height: 32px;">收起</a>
+                            </div>
+                         </div>
+                         {% if pwindow == "popen" and event_cmt.id == frpid %}
+                            {% include 'web/pages/event/window/reply_list.html' %}
+                         {% endif %}
                         </div>
-                      </li>
-                    </ul>
-                  </div>
+                    </div>
+                    {% if rwindow == "ropen" and event_cmt.id == frpid %}
+                       {% include 'web/pages/event/window/reply.html' %}
+                    {% endif %}
                 </div>
-              </div>
-              <div class="text-area-box">
-                <textarea
-                  row="4"
-                  placeholder="请输入内容"
-                  class="comment-text-area"
-                >
-                </textarea>
-                <div class="el-button primary" style="width: 80px;height: 32px;">回复</div>
-              </div>
-            </div>
+            {% endfor %}
           </div>
         </div>
       </div>

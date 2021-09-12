@@ -226,7 +226,7 @@ class EventComment(BaseModel):
         null=True,
         verbose_name="关联事件",
     )
-    father_forum_cy = models.ForeignKey(
+    father_event_cy = models.ForeignKey(
         "EventComment",
         on_delete=models.CASCADE,
         blank=True,
