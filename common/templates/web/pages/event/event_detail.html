@@ -14,7 +14,7 @@
         <div class="article-box">
           <div class="left-article-box">
             <p class="title">{{ event.title }}<span>{{ event.event_cat.name }}</span></p>
-            <p class="time">2021-06-20 10:50:11</p>
+            <p class="time">{{ event.created_at | hdatetime }}</p>
             <div class="info-box">
               <img src="{% url 'index' %}media/{{ event.user.photo }}" alt="" class="user-img">
               <p class="user-name">{{ event.user.name }}</p>

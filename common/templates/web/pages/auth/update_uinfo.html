@@ -52,8 +52,12 @@
             <form action="{% url 'update_uinfo' %}" class="el-form" method="post" enctype="multipart/form-data">
                 <div class="personal-content">
                   <div class="img-upload">
-                    <img id="pic" style="width:100px;height:100px;border-radius:50%;" src="{% static 'web/images/touxiang_d.png' %}">
-                    <input id="upload" name="file" accept="image/*" type="file" style="display: none">
+                    {% if user.photo %}
+                        <img id="pic" style="width:100px;height:100px;border-radius:50%;" src="{% url 'index' %}media/{{ user.photo }}">
+                    {% else %}
+                        <img id="pic" style="width:100px;height:100px;border-radius:50%;" src="{% static 'web/images/touxiang_d.png' %}">
+                    {% endif %}
+                    <input id="upload" name="photo" accept="image/*" type="file" style="display: none">
                       {% if uinfo_form.photo.errors %}
                         <div style="color:red; margin-left:8px; margin-top:5px">
                            {{ uinfo_form.photo.errors }}
