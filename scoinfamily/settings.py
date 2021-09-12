@@ -100,6 +100,13 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "common/static")]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+
+ACCESSKEYID = 'LTAI4FsrVizgQCehFNZGBdJU'   # 短信验证吗 accessKeyId
+ACCESSSECRET = 'prVvf6xYJoYTl99YZAlmbqBnZ6OaTG'  # 短信验证码 accessSecret
+SIGNNAME = '问我学院'      # 短信验证码 SignName
+TEMPLATECODE = 'SMS_183765549'  # 短信验证码 TemplateCode
+
+
 try:
     from .local_settings import *
 except ImportError:

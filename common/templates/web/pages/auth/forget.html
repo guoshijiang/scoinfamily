@@ -1,28 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>币家-帮丢失的币回家</title>
-  <link rel="stylesheet" href="./css/common.css">
-  <link rel="stylesheet" href="./css/login.css">
-</head>
-<body>
+{% extends 'web/layout/main.html' %}
+{% load staticfiles cf_tags%}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'web/css/login.css' %}">
+{% endblock %}
+{% block content %}
   <div class="body-container flex-center">
     <div class="login-box">
-      <a href="./index.html"><img src="./images/logo.png" alt="logo"></a>
+      <a href="./index.html"><img src="{% static 'web/images/logo.png' %}" alt="logo"></a>
       <div class="login-info-box flex-column alcenter" style="height: 323px;">
         <p class="title">忘记密码</p>
         <form action="#" class="el-form">
           <div class="el-input">
             <div class="el-label-box">
-              <img class="el-icon" src="./images/yonghu-2.png" alt="yonghu" />
+              <img class="el-icon" src="{% static 'web/images/yonghu-2.png' %}" alt="yonghu" />
             </div>
             <input type="text" class="el-input__inner" placeholder="手机号" maxlength="11">
           </div>
           <div class="el-input">
             <div class="el-label-box">
-              <img class="el-icon" src="./images/mima.png" alt="yonghu" />
+              <img class="el-icon" src="{% static 'web/images/mima.png' %}" alt="yonghu" />
             </div>
             <input type="text" class="el-input__inner" placeholder="验证码" maxlength="6">
             <div class="el-input-right">
@@ -31,20 +27,19 @@
           </div>
           <div class="el-input">
             <div class="el-label-box">
-              <img class="el-icon" src="./images/mima.png" alt="yonghu" />
+              <img class="el-icon" src="{% static 'web/images/mima.png' %}" alt="yonghu" />
             </div>
             <input type="password" class="el-input__inner" placeholder="新密码">
             <div class="el-input-right">
-              <img class="el-icon" src="./images/yanjing.png" alt="yanjing" />
+              <img class="el-icon" src="{% static 'web/images/yanjing.png' %}" alt="yanjing" />
             </div>
           </div>
           <div class="btn-box flex-between">
-            <a href="./login.html">去登录</a>
+            <a href="{% url 'login' %}">去登录</a>
           </div>
           <div class="el-button block">修改</div>
         </form>
       </div>
     </div>
   </div>
-</body>
-</html>
+{% endblock %}

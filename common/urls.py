@@ -13,7 +13,12 @@ from tools.views import (
     tools,
     tools_detail
 )
-from scauth.views import login, register
+from scauth.views import (
+    sms_send,
+    login,
+    register,
+    forget
+)
 
 
 urlpatterns: List[Any] = [
@@ -27,7 +32,8 @@ urlpatterns: List[Any] = [
     path(r'tools', tools, name='tools'),
     path(r'<int:tid>/tools_detail', tools_detail, name='tools_detail'),
 
-
+    path(r'sms_send', sms_send, name='sms_send'),
     path(r'login', login, name='login'),
     path(r'register', register, name='register'),
+    path(r'forget', forget, name='forget'),
 ]

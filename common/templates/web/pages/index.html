@@ -4,7 +4,8 @@
     <link rel="stylesheet" href="{% static 'web/css/index.css' %}">
 {% endblock %}
 {% block content %}
-<div class="banner-container w1200 flex-between alcenter">
+ {% include 'web/layout/header.html' %}
+ <div class="banner-container w1200 flex-between alcenter">
     <div class="left-banner">
       <p class="banner-title">币家<br />帮丢失的币回家</p>
       <p class="english-title">COINFAMILY</p>
@@ -15,7 +16,7 @@
       <img src="{% static 'web/images/banner.png' %}" alt="banner">
     </div>
   </div>
-<ul class="currency-container w1200">
+  <ul class="currency-container w1200">
     <li>
       <img class="currency-icon" src="{% static 'web/images/ETH.png' %}" alt="btc">
       <div class="name-box">
@@ -119,4 +120,5 @@
         </ul>
     </div>
     {% include 'web/layout/contact.html' %}
+    {% include 'web/layout/bottom.html' %}
 {% endblock %}
