@@ -2,18 +2,19 @@
 {% load staticfiles cf_tags%}
 {% block head %}
     <link rel="stylesheet" href="{% static 'web/css/tool.css' %}">
+    <link rel="stylesheet" href="{% static 'web/css/index.css' %}">
 {% endblock %}
 {% block content %}
  {% include 'web/layout/header.html' %}
-  <div class="banner-container w1200 flex-between alcenter">
+   <div class="banner-container w1200 flex-between alcenter">
     <div class="left-banner">
       <p class="banner-title">币家<br />帮丢失的币回家</p>
       <p class="english-title">COINFAMILY</p>
       <p class="english-sub-title"><span>H</span>ELP BRING HOME LOSTMONEY</p>
-      <a href="#" class="el-button primary join-btn">马上参与</a>
+      <a href="{% url 'login' %}" class="el-button primary join-btn">马上参与</a>
     </div>
     <div class="right-banner">
-      <img src="{% static 'web/images/banner_xiaogongju.png' %}" alt="banner">
+      <img src="{% static 'web/images/banner.png' %}" alt="banner">
     </div>
   </div>
   <div class="small-tool-container w1000">
