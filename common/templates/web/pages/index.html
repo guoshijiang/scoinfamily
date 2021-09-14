@@ -17,31 +17,31 @@
     </div>
   </div>
   <ul class="currency-container w1200">
-    <a href="http://www.wenwoha.com/">
+    <a href="http://www.wenwoha.com/" style="text-decoration:none">
         <li>
           <img class="currency-icon" src="{% static 'web/images/wenwo.png' %}" alt="btc">
           <div class="price">问我学院</div>
         </li>
     </a>
-     <a href="http://gingernet.vip/">
+     <a href="http://gingernet.vip/" style="text-decoration:none">
         <li>
           <img class="currency-icon" src="{% static 'web/images/tuoyuanquxian.png' %}" alt="btc">
           <div class="price">椭圆曲线</div>
         </li>
      </a>
-     <a href="http://www.chaineye.info/">
+     <a href="http://www.chaineye.info/" style="text-decoration:none">
         <li>
           <img class="currency-icon" src="{% static 'web/images/lianyan.png' %}" alt="btc">
           <div class="price">链眼社区</div>
         </li>
      </a>
-     <a href="#">
+     <a href="#" style="text-decoration:none">
         <li>
           <img class="currency-icon" src="{% static 'web/images/CoinCore Wallet.png' %}" alt="btc">
           <div class="price">币核钱包</div>
         </li>
      </a>
-     <a href="http://www.zhifish.cn/">
+     <a href="http://www.zhifish.cn/" style="text-decoration:none">
         <li>
           <img class="currency-icon" src="{% static 'web/images/zhiyu.png' %}" alt="btc">
           <div class="price">知鱼定制</div>
@@ -85,7 +85,7 @@
         </div>
         <ul class="recovery-scheme-content">
           {% for blog in lst_arctcle %}
-              <a href="{% url 'blog_detail' blog.id %}">
+              <a style="text-decoration:none" href="{% url 'blog_detail' blog.id %}">
                   <li>
                     <span class="blue-line"></span>
                     <p class="recovery-scheme-title">{{ blog.title }}</p>
