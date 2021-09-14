@@ -140,7 +140,14 @@ class Event(BaseModel):
         choices=BoolYesOrNoSelect,
         default="No",
         db_index=True,
-        verbose_name="是不是商家",
+        verbose_name="是否公开",
+    )
+    is_new = models.CharField(
+        max_length=100,
+        choices=BoolYesOrNoSelect,
+        default="No",
+        db_index=True,
+        verbose_name="是否最新",
     )
     is_active = models.BooleanField(
         default=True, verbose_name="是否是有效"

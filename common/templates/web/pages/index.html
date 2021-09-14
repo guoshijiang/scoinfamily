@@ -69,7 +69,9 @@
                 </div>
                 <div class="right-currency-box">
                   <a class="see-detail-btn" href="{% url 'event_detail' event.id %}">查看详情</a>
-                  <div class="new-icon">NEW</div>
+                  {% if event.is_new == 'Yes' %}
+                    <div class="new-icon">NEW</div>
+                  {% endif %}
                 </div>
             </div>
         {% endfor %}
