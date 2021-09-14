@@ -82,7 +82,6 @@ def publish_event(request):
             )
             return redirect("event")
 
-
 @check_user_login
 def event_cmt_reply(request, eid):
     father_event_id = int(request.POST.get("father_event_id", 0))
