@@ -13,6 +13,7 @@ from aliyunsdkcore.client import AcsClient
 from aliyunsdkcore.request import CommonRequest
 from django.core.cache import cache
 from common.helpers import error_json, ok_json
+from django.shortcuts import redirect, render
 
 
 TOEKN_INFO_EMPTY = 100
@@ -80,3 +81,12 @@ def edd_time_handle(days=0):
     date_start = datetime.datetime.strptime(date_time, '%Y-%m-%d')
     date_start += datetime.timedelta(days=days)
     return str(date_start)
+
+
+def check_user_login(func):
+    def user_auth(request, *args, ** kwargs):
+        if request.session.get("is_login") is False\
+                or request.session.get("is_login") is None:
+            return redirect("login")
+        return func(request, *args, **kwargs)
+    return user_auth

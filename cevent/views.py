@@ -8,6 +8,7 @@ from cevent.models import Event, EventCat, EventBack, EventComment
 from blogs.models import Article
 from cevent.forms.pulish_form import EventForm
 from scauth.models import AuthUser
+from scauth.help import check_user_login
 
 
 def event(request):
@@ -52,6 +53,7 @@ def event_detail(request, vid):
         return render(request, 'web/pages/event/event_detail.html', locals())
 
 
+@check_user_login
 def publish_event(request):
     nav_bar = "event"
     user_id = request.session.get("user_id")
@@ -81,6 +83,7 @@ def publish_event(request):
             return redirect("event")
 
 
+@check_user_login
 def event_cmt_reply(request, eid):
     father_event_id = int(request.POST.get("father_event_id", 0))
     content = request.POST.get("content", "")
