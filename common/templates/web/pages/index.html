@@ -85,11 +85,13 @@
         </div>
         <ul class="recovery-scheme-content">
           {% for blog in lst_arctcle %}
-              <li>
-                <span class="blue-line"></span>
-                <p class="recovery-scheme-title">{{ blog.title }}</p>
-                <p class="recovery-scheme-desc">{{ blog.excerpt }}</p>
-              </li>
+              <a href="{% url 'blog_detail' blog.id %}">
+                  <li>
+                    <span class="blue-line"></span>
+                    <p class="recovery-scheme-title">{{ blog.title }}</p>
+                    <p class="recovery-scheme-desc">{{ blog.excerpt }}</p>
+                  </li>
+              </a>
           {% endfor %}
         </ul>
         {% if lst_arctcle %}
