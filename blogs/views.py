@@ -26,6 +26,8 @@ def blogs(request):
 def blog_detail(request, id):
     nav_bar = "blog"
     blog_dtl = Article.objects.filter(id=id).first()
+    blog_dtl.views += 1
+    blog_dtl.save()
     user_agt = judge_pc_or_mobile(request.META.get("HTTP_USER_AGENT"))
     if user_agt is False:
         return render(request, 'web/pages/blog/blog_detail.html', locals())

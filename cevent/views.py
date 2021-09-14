@@ -41,6 +41,8 @@ def event_detail(request, vid):
         event_comment.reply = event_comment_list.filter(father_event_cy=event_comment).order_by("-id")
         event_comment.reply_lastest = event_comment_list.filter(father_event_cy=event_comment).order_by("-id").first()
         event_comment.nums = event_comment_list.filter(father_event_cy=event_comment).count()
+    event.views += 1
+    event.save()
     user_agt = judge_pc_or_mobile(request.META.get("HTTP_USER_AGENT"))
     if user_agt is False:
         event_comment_list = paged_items(request, event_comment_list)

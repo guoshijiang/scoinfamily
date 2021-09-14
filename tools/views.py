@@ -22,6 +22,8 @@ def tools(request):
 def tools_detail(request, tid):
     nav_bar = "tools"
     tool_detail = Tools.objects.filter(id=tid).first()
+    tool_detail.views += 1
+    tool_detail.save()
     user_agt = judge_pc_or_mobile(request.META.get("HTTP_USER_AGENT"))
     if user_agt is False:
         return render(request, 'web/pages/tools/tools_detail.html', locals())
