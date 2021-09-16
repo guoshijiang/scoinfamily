@@ -44,7 +44,7 @@ class UserPwdLoginForm(forms.Form):
             raise forms.ValidationError('密码不能为空')
         user = AuthUser.objects.filter(phone=self.cleaned_data.get('phone')).first()
         if user.password != password:
-            raise forms.ValidationError('密码错误，请核对之后输入')
+            raise forms.ValidationError('密码错误，请核对后输入')
         return password
 
 
@@ -84,7 +84,7 @@ class UserCodeLoginForm(forms.Form):
     def clean_v_code(self):
         v_code = self.cleaned_data.get('v_code')
         if v_code in ["", None]:
-            raise forms.ValidationError('密码不能为空')
+            raise forms.ValidationError('验证码不能为空')
         if v_code != "666666":
             raise forms.ValidationError('验证码错误，请核对之后输入')
         return v_code

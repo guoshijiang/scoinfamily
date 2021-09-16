@@ -54,6 +54,7 @@ def register(request):
 
 
 def login(request):
+    login_way = request.GET.get("login_way", "password")
     user_agt = judge_pc_or_mobile(request.META.get("HTTP_USER_AGENT"))
     if request.session.get("is_login", None):
         if user_agt is False:
@@ -61,17 +62,15 @@ def login(request):
         else:
             return redirect("index")
     if request.method == "GET":
-        login_way = request.GET.get("login_way", "password")
         if login_way == "password":
             login_form = UserPwdLoginForm(request)
-        else:
+        if login_way == "verify":
             login_form = UserCodeLoginForm(request)
         if user_agt is False:
             return render(request, 'web/pages/auth/login.html', locals())
         else:
             return render(request, 'web/pages/auth/login.html', locals())
     if request.method == "POST":
-        login_way = request.POST.get("login_way", "password")
         if login_way == "password":
             login_form = UserPwdLoginForm(request, request.POST)
             if login_form.is_valid():
@@ -86,12 +85,16 @@ def login(request):
                 return render(
                     request,
                     'web/pages/auth/login.html',
-                    {'login_form': login_form, 'error': error}
+                    {
+                        'login_form': login_form,
+                        'error': error,
+                        'login_way': "password"
+                    }
                 )
-        else:
+        if login_way == "verify":
             login_form = UserCodeLoginForm(request, request.POST)
-            user = AuthUser.objects.filter(phone=login_form.clean_phone()).first()
             if login_form.is_valid():
+                user = AuthUser.objects.filter(phone=login_form.clean_phone()).first()
                 request.session["is_login"] = True
                 request.session["user_id"] = user.id
                 request.session["user_name"] = user.name
@@ -102,7 +105,11 @@ def login(request):
                 return render(
                     request,
                     'web/pages/auth/login.html',
-                    {'login_form': login_form, 'error': error}
+                    {
+                        'login_form': login_form,
+                        'error': error,
+                        'login_way': "verify",
+                    }
                 )
 
 

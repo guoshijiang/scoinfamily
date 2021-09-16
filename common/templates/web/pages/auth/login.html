@@ -10,7 +10,7 @@
       <div class="login-info-box flex-column alcenter">
         <p class="title">登录</p>
         <p class="sub-title">欢迎来到币家</p>
-        <form action="{% url 'login' %}" class="el-form" method="post">
+        <form action="{% url 'login' %}?login_way={{ login_way }}" class="el-form" method="post">
           <div class="el-input">
             <div class="el-label-box">
               <img class="el-icon" src="{% static 'web/images/yonghu-2.png' %}" alt="yonghu" />
