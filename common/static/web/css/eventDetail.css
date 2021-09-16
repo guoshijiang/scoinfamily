@@ -223,10 +223,9 @@
 }
 .event-detail-container .article-box .right-article-box .right-article-status .status-item .right-status-text .comment-box {
   width: 300px;
-  height: 100px;
   background: #F7F8FB;
   border-radius: 10px;
-  padding: 20px 18px;
+  padding: 10px 18px;
   font-size: 16px;
   font-family: PingFang SC;
   font-weight: 400;
