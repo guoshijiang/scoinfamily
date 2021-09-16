@@ -57,13 +57,14 @@
               </div>
           {% endif %}
           <div class="btn-box flex-between">
-            {% if login_way == "password" %}
-                <a href="{% url 'login' %}?login_way=verify">验证码登录</a>
-            {% endif %}
+{#            {% if login_way == "password" %}#}
+{#                <a href="{% url 'login' %}?login_way=verify">验证码登录</a>#}
+{#            {% endif %}#}
              {% if login_way == "verify" %}
                 <a href="{% url 'login' %}?login_way=password">密码登陆</a>
             {% endif %}
-            <a href="{% url 'forget' %}">忘记密码？</a>
+            <a>如果忘记密码，请联系客服处理, 首页下方有联系方式</a>
+{#            <a href="{% url 'forget' %}">忘记密码？</a>#}
           </div>
           <button type="submit" class="el-button block">登录</button>
         </form>

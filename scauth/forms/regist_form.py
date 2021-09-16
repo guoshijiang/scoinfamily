@@ -33,15 +33,15 @@ class AuthUserRegisterForm(forms.Form):
         ),
         error_messages={"required": "请输入确认密码, 确认密码不能为空"},
     )
-    v_code = forms.CharField(
-        required=True,
-        label="验证码",
-        max_length=64,
-        widget=forms.widgets.TextInput(
-            {"type": "password", "placeholder": "请输入验证码", "class": "el-input__inner"}
-        ),
-        error_messages={"required": "请输入验证码， 验证码不能为空"},
-    )
+    # v_code = forms.CharField(
+    #     required=True,
+    #     label="验证码",
+    #     max_length=64,
+    #     widget=forms.widgets.TextInput(
+    #         {"type": "password", "placeholder": "请输入验证码", "class": "el-input__inner"}
+    #     ),
+    #     error_messages={"required": "请输入验证码， 验证码不能为空"},
+    # )
 
     def __init__(self, request, *args, **kw):
         self.request = request
@@ -73,13 +73,13 @@ class AuthUserRegisterForm(forms.Form):
             raise forms.ValidationError('两次输入的密码不一样')
         return c_password
 
-    def clean_v_code(self):
-        v_code = self.cleaned_data.get('v_code')
-        if v_code in ["", None]:
-            raise forms.ValidationError('验证码不能为空')
-        if v_code != "666666":
-            raise forms.ValidationError('验证码不正确')
-        return v_code
+    # def clean_v_code(self):
+    #     v_code = self.cleaned_data.get('v_code')
+    #     if v_code in ["", None]:
+    #         raise forms.ValidationError('验证码不能为空')
+    #     if v_code != "666666":
+    #         raise forms.ValidationError('验证码不正确')
+    #     return v_code
 
     def save_register_user(self):
         create_user = AuthUser.objects.create(
