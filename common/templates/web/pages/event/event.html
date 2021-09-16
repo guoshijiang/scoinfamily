@@ -76,7 +76,7 @@
             {% for fback in event_feedback %}
                 <div class="user-feed-back-item">
                   <p class="name">{{ fback.user.name }}</p>
-                  <p class="desc">{{ fback.content }}</p>
+                  <p class="desc">{{ fback.content | safe }}</p>
                 </div>
            {% endfor %}
           </div>
