@@ -1,5 +1,3 @@
-# scoinfamily
-
 <!--
 parent:
   order: false
@@ -24,7 +22,7 @@ parent:
 
 #### 1.Introduction
 
-The whole project is written in Python's Django framework. 
+The whole project is written in Python's Django framework. This project can be used in question and answer systems and community websites.
 
 #### 2.Deployment
 
